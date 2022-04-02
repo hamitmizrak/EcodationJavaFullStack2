@@ -1,4 +1,6 @@
-
+### special ###
+log
+memory_persist
 
 HELP.md
 target/
