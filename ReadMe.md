@@ -1,5 +1,5 @@
 # Ecodation Java Full Stack Developer -2 (2 Nisan 2022)
-* [GitHub]()
+* [GitHub](https://github.com/hamitmizrak/EcodationJavaFullStack2)
 * 
 ### Gereksinimler
 Java 17
