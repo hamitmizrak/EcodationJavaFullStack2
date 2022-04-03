@@ -127,16 +127,16 @@ alt="merdiven" />
 <br>
 <hr>
 <h1>FORM</h1>
-<form action="index.html" method="get">
+<form action="index.html" method="get" target="_blank">
     <div>
-        <label for="adi">Adınız</label>
-        <input type="text" placeholder="Adınızı yazınız..." 
+        <label for="adi">Adınız</label><br>
+        <input type="text" placeholder="Adınızı yazınız..."
         required name="adi" id="adi" >
     </div>
     <br>
-    
+
     <div>
-        <label for="email_address">Email</label>
+        <label for="email_address">Email</label><br>
         <input type="email" name="email_address" id="email_address"
         required placeholder="email adresinizi giriniz"
         >
@@ -144,7 +144,7 @@ alt="merdiven" />
     <br>
 
     <div>
-        <label for="sifre">Şifreniz</label>
+        <label for="sifre">Şifreniz</label><br>
         <input type="password" placeholder="şifreniz" required name="sifre" id="sifre">
     </div>
     <br>
@@ -169,8 +169,38 @@ alt="merdiven" />
         <input type="checkbox" name="js" id="js" value="js">
         <label for="js">JS</label><br>
     </div>
+<br>
+<div>
+    <select name="il" id="il" multiple>
+        <option value="ankara">Ankara</option>
+        <option value="istanbul">İstanbul</option>
+        <option value="maras" selected>Maraş</option>
+    </select>
+</div>
+<br>
+<textarea name="form" id="form" cols="50" rows="3"></textarea>
+<br>
+<h5>Data List</h5>
+<input list="browsers" name="browser">
+<datalist id="browsers">
+  <option value="Internet Explorer">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
 
-    <br>
+
+<br><br><br>
+
+
+<input type="color" disabled><br>
+<input type="date"><br>
+<input type="file"><br>
+<input type="hidden"><br>
+<br>
+
+    <br><br>
     <button type="reset">Temizle</button>
     <button type="submit">Gönder</button>
 </form>
