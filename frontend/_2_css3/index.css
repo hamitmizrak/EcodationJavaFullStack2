@@ -138,16 +138,38 @@ pseudo class */
 
 /* box-shadow*/
 #box{
-    width: 25%;
+    width: 45%;
     height: 150px;
     background: red;
     margin-left:5%;
     margin-top:3%;
     box-shadow: 1px 1px 4px 2px;
+    padding:1%;
 }
 
 #box:hover{
     background: blue;
-    box-shadow: 1px 1px 8px 2px;
+    box-shadow: 10px 1px 8px 2px;
+    /* 1px:x yönünde
+    2px: y yönünde
+    8px: blur büyüklüğü
+    2px blur  */
     transition: 3s all;
+    transform: rotate(-360deg);
+    /* transform: translate(50%,50%) */
+    cursor: pointer;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+header{
+    background-image: url('stairs-gdf7654e4e_1920.jpg');
+    /* background-image: linear-gradient(black,red); */
+    clip-path: polygon(0 0 , 100% 0 , 100% 100%, 0 85%);
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
 }
