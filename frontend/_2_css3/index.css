@@ -11,7 +11,7 @@
     color: red !important;
 }
 
-div {
+.div_class {
     width: 25%;
     height: 250px;
     background: green;
@@ -52,14 +52,102 @@ div {
     column-rule: 4px solid red;
 }
 
-img {
-    width: 55%;
-    height: 150px;
-    float: right;
-}
+
 
 .clear_and_fix::before {
     content: "";
     clear: both;
     display: block;
+}
+
+ul{
+    list-style-type: none;
+}
+
+ul li:first-child{
+    color:Red;
+}
+
+img {
+    width: 900px;
+    height: 150px;
+    float: right;
+    padding:15px;
+    border:10px solid blue;
+
+    /* 10+10+15+15+900=950px : border-box: */
+}
+
+/* 
+box-sizing:border-box; ==> padding+
+*/
+
+/* Group selector */
+*{
+    margin:0;
+    padding:0px;
+    box-sizing:border-box ;
+}
+
+/* Group selector */
+/* tüm p ve tüm p*/
+/* div,p{
+    background-color: blue;
+} */
+
+/* parenti: div olacak ve ve div içindeki tüm p'ler*/
+/* div>p{
+    background-color: blue;
+} */
+
+/* div ile p aynı hizada olacak ve tüm p'ler */
+/* div~p{
+    background-color: blue;
+} */
+
+/*anchor: a */
+a{
+  border:2px solid green;
+  margin-left: 5px;
+}
+/* 
+pseudo class */
+/* ilk hali */
+.yonlendirme:link{
+    color:yellow;
+    background-color: green;
+}
+
+
+.yonlendirme:active{
+    color:rgb(9, 0, 71);
+    background-color: cadetblue;
+}
+
+/* üzeriene geldiğimde*/
+.yonlendirme:hover{
+    color:black;
+    background-color: rgb(70, 122, 70);
+}
+
+/* Tıklandığında sonrası*/
+.yonlendirme:visited{
+    color:pink;
+    background-color: orange;
+}
+
+/* box-shadow*/
+#box{
+    width: 25%;
+    height: 150px;
+    background: red;
+    margin-left:5%;
+    margin-top:3%;
+    box-shadow: 1px 1px 4px 2px;
+}
+
+#box:hover{
+    background: blue;
+    box-shadow: 1px 1px 8px 2px;
+    transition: 3s all;
 }
