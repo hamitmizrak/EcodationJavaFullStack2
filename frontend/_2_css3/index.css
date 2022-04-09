@@ -68,7 +68,7 @@ ul li:first-child{
     color:Red;
 }
 
-img {
+/* img {
     width: 900px;
     height: 150px;
     float: right;
@@ -78,6 +78,7 @@ img {
     /* 10+10+15+15+900=950px : border-box: */
 }
 
+*/
 /* 
 box-sizing:border-box; ==> padding+
 */
@@ -106,36 +107,41 @@ box-sizing:border-box; ==> padding+
 } */
 
 /*anchor: a */
-a{
+/* a{
   border:2px solid green;
   margin-left: 5px;
 }
+*/
 /* 
 pseudo class */
 /* ilk hali */
-.yonlendirme:link{
+/* .yonlendirme:link{
     color:yellow;
     background-color: green;
 }
 
+*/
 
-.yonlendirme:active{
+/* .yonlendirme:active{
     color:rgb(9, 0, 71);
     background-color: cadetblue;
 }
 
+*/
 /* üzeriene geldiğimde*/
-.yonlendirme:hover{
+/* .yonlendirme:hover{
     color:black;
     background-color: rgb(70, 122, 70);
 }
 
+*/
 /* Tıklandığında sonrası*/
-.yonlendirme:visited{
+/* .yonlendirme:visited{
     color:pink;
     background-color: orange;
 }
 
+*/
 /* box-shadow*/
 #box{
     width: 45%;
@@ -145,6 +151,9 @@ pseudo class */
     margin-top:3%;
     box-shadow: 1px 1px 4px 2px;
     padding:1%;
+    /* position: static; default */
+    /* position: sticky;
+            top:12px; */
 }
 
 #box:hover{
@@ -158,6 +167,7 @@ pseudo class */
     transform: rotate(-360deg);
     /* transform: translate(50%,50%) */
     cursor: pointer;
+
 }
 
 img{
@@ -168,8 +178,64 @@ img{
 header{
     background-image: url('stairs-gdf7654e4e_1920.jpg');
     /* background-image: linear-gradient(black,red); */
-    clip-path: polygon(0 0 , 100% 0 , 100% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
     background-size: cover;
     background-position: center;
     height: 75vh;
+}
+/* #picture_id{
+    position: relative;
+    top:0;
+    left:0 ;
+} */
+
+#backtotop {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: chartreuse;
+    color: black;
+    padding: 2px;
+    margin-right: 8px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+#backtotop:hover {
+    background-color: black;
+    color: chartreuse;
+}
+
+#responsive {
+    display: inline;
+}
+
+/* 600px
+900px
+x>1200px */
+
+/* 0<=X<=600 */
+@media screen and (min-width:1px) {
+    #responsive img {
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width:600px) {
+    #responsive img {
+        width: 49%;
+    }
+}
+
+@media screen and (min-width:900px) {
+    #responsive img {
+        width: 32%;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    #responsive img {
+        width: 24%;
+    }
 }
