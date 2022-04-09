@@ -2,16 +2,16 @@
 /* Ctrl+K+C */
 
 /* id */
-#h4_id{
-font-size: 55px;
+#h4_id {
+    font-size: 55px;
 }
 
 /* class */
-.h4_class{
-color:red!important;
+.h4_class {
+    color: red !important;
 }
 
-div{
+div {
     width: 25%;
     height: 250px;
     background: green;
@@ -19,21 +19,25 @@ div{
     /* color:#123; */
     /* 0123456789abcdef */
     /* color:rgb(0, 0, 0); */
-    color:rgba(0, 0, 0,.4);
+    color: rgba(0, 0, 0, .4);
     /* color:yellow; */
- 
+
     /*margin:42px; dış boşluk */
     /* margin:2px 4px 6px 2px; */
     /* margin:12px 5px; */
     margin-top: 2px;
-    padding:12px;
-    border:4px solid blue;
+    padding: 12px;
+    border: 4px solid blue;
     /* border-radius: 50%; */
     /* border-top-left-radius: 15%; */
+    /* display:inline-block; */
+    /* display:none; */
+    /* visibility: hidden; */
 
 }
-.paragraf{
-    font-size:12px;
+
+.paragraf {
+    font-size: 12px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 800;
     font-style: italic;
@@ -46,4 +50,16 @@ div{
     line-height: 12px;
     column-count: 3;
     column-rule: 4px solid red;
+}
+
+img {
+    width: 55%;
+    height: 150px;
+    float: right;
+}
+
+.clear_and_fix::before {
+    content: "";
+    clear: both;
+    display: block;
 }
