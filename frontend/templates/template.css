@@ -110,3 +110,16 @@ ul {
     float:left;
     width:100%;
 }
+
+
+/**###############################################*/
+/**################## HEADER #####################*/
+header{
+    background-image:url('img/computer-g410a0840b_1920.jpg');
+    background-size: cover;
+    background-position: 25% 50%;
+    /* 400/20=20 */
+    height: 30rem;
+    z-index:-1;
+    margin-top:0.01rem;
+}
