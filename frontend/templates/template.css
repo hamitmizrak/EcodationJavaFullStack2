@@ -14,6 +14,11 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
+body hr{
+    margin:0 30rem;
+    font-weight: bold;
+}
+
 /* anchor */
 a{
     text-decoration: none;
@@ -40,6 +45,12 @@ ul {
 /**###############################################*/
 /**################## SPECIAL #####################*/
  /* üç nokta */
+ .line-clamp-1{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 .line-clamp-2{
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -68,6 +79,12 @@ ul {
     overflow: hidden;
 }
 
+.line-clamp-6 {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
 /* clearfixauto */
 .clearfixauto::after{
@@ -127,13 +144,14 @@ header{
 #header_all{
     background:rgba(0,0,0,.8);
     color:azure;
-    padding-top:4rem;
-    padding-bottom:1rem;
+   
+    width: 100%;
 }
 
 /**###############################################*/
 /**################## MAIN #####################*/
 
+/* section1 */
 #section1{
     margin: 2rem auto;
 }
@@ -148,6 +166,10 @@ header{
     margin-top:.8rem;
 }
 
+/* section1 */
+#section2 p {
+    text-align: justify;
+}
 /**###############################################*/
 /**################## FOOTER #####################*/
 footer{
