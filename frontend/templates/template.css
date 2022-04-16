@@ -37,7 +37,8 @@ ul {
     list-style-type: none
 }
 
-/* special my css */
+/**###############################################*/
+/**################## SPECIAL #####################*/
  /* üç nokta */
 .line-clamp-2{
     display: -webkit-box;
@@ -111,7 +112,6 @@ ul {
     width:100%;
 }
 
-
 /**###############################################*/
 /**################## HEADER #####################*/
 header{
@@ -119,7 +119,23 @@ header{
     background-size: cover;
     background-position: 25% 50%;
     /* 400/20=20 */
-    height: 30rem;
+    height: 60vh;
     z-index:-1;
     margin-top:0.01rem;
+}
+
+#header_all{
+    background:rgba(0,0,0,.8);
+    color:azure;
+    padding-top:4rem;
+    padding-bottom:1rem;
+}
+
+/**###############################################*/
+/**################## FOOTER #####################*/
+footer{
+   min-height: 15rem; 
+   width:auto;
+   background:rgba(0,0,0,.8);
+   color:white;
 }
