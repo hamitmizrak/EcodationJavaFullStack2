@@ -132,6 +132,23 @@ header{
 }
 
 /**###############################################*/
+/**################## MAIN #####################*/
+
+#section1{
+    margin: 2rem auto;
+}
+
+#section1 i{
+    font-size:5rem;
+    margin-left:3rem;
+}
+#section1 p{
+    text-align:left ;
+    font-size: 1.5rem;
+    margin-top:.8rem;
+}
+
+/**###############################################*/
 /**################## FOOTER #####################*/
 footer{
    min-height: 15rem; 
