@@ -60,7 +60,7 @@ ul {
 .clearfixauto::after{
     content:"";
     clear:both;
-    display:block
+    display:block;
 }
 
 /* upperCase */
