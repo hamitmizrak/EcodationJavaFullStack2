@@ -171,30 +171,48 @@
 
 /////////////////////////////////////////////////////////////////
 //KELİME
+
+//kelime=" Enum collection Data structure primitive TYPe "
+
 //Java ile JavaScript aynı method , function 
-var kelime="http html5 CSS3 Js javase html5";
-kelime=String(kelime);
+// var kelime="http html5 CSS3 Js javase html5";
+// kelime=String(kelime);
 
-console.log("karakter sayısı: "+kelime.length);
-console.log("Trim sayısı: "+kelime.trim().length);
+// console.log("karakter sayısı: "+kelime.length);
+// console.log("Trim sayısı: "+kelime.trim().length);
 
-console.log("http ile mi başlıyor: "+kelime.startsWith("http"));
-console.log("javase ile mi bitiyor: "+kelime.endsWith("javase"));
+// console.log("http ile mi başlıyor: "+kelime.startsWith("http"));
+// console.log("javase ile mi bitiyor: "+kelime.endsWith("javase"));
 
-console.log("sona ekle "+kelime.concat(" -INC"));
+// console.log("sona ekle "+kelime.concat(" -INC"));
 
-console.log(kelime.toUpperCase());
-console.log(kelime.toLowerCase());
+// console.log(kelime.toUpperCase());
+// console.log(kelime.toLowerCase());
 
-console.log("baştan arama "+kelime.indexOf("html5"));
-console.log("sondan "+kelime.lastIndexOf("html5"));
+// console.log("baştan arama "+kelime.indexOf("html5"));
+// console.log("sondan "+kelime.lastIndexOf("html5"));
 
-console.log(kelime.charAt(0));
+// console.log(kelime.charAt(0));
 
-console.log(kelime.replace(kelime,"frontend"));
+// console.log(kelime.replace(kelime,"frontend"));
 
-console.log(kelime.substring(1)); //sıfırdan başlar
-console.log(kelime.substring(1,6)); //sıfırdan başlar 1<=x<=5-1
+// console.log(kelime.substring(1)); //sıfırdan başlar
+// console.log(kelime.substring(1,6)); //sıfırdan başlar 1<=x<=5-1
+
+
+///Random:rastgele
+// console.log( Math.round(Math.random()*4+1));
+
+//stringify: objeyi String'e çevirmek
+var obje={"adi":"Hamit"};
+console.log(obje);
+
+var objeyistringeCevirdim=JSON.stringify(obje);
+console.log(objeyistringeCevirdim.substring(8,13));
+
+//parse: String'i Objeye çevirmek
+var stringObjeyeCevirdim=JSON.parse(objeyistringeCevirdim);
+console.log(stringObjeyeCevirdim);
 
 
 
