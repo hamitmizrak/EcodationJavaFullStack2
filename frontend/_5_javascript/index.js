@@ -126,9 +126,14 @@
 // console.log(Math.ceil(12.1));
 // console.log(Math.round(4.4));
 // console.log(Math.round(4.5));
+
+///Random:rastgele
+// console.log( Math.round(Math.random()*4+1));
+
 //kullanıcıdan alınan iki sayıda (prompt,Number()) dört işlem yapacak
 //iki sayı arasındaki en büyük sayının karekökü,mutlak değeri 
 //küçük sayı taban: büyük sayı üst olacak şekilde pow yapacağız
+
 
 /////////////////////////////////////////////////////////////////
 //SAYILAR
@@ -199,20 +204,95 @@
 // console.log(kelime.substring(1)); //sıfırdan başlar
 // console.log(kelime.substring(1,6)); //sıfırdan başlar 1<=x<=5-1
 
+// indexOf,lastIndexOf,search ==> arama için kullanıyoruz.
+//search daha ayrıntılı ve filtreleme yaparak arama işlemi yapar
+//  var searchValue="Script script Script";
+//  console.log(searchValue.indexOf("Script"))
+//  console.log(searchValue.lastIndexOf("Script"))
 
-///Random:rastgele
-// console.log( Math.round(Math.random()*4+1));
+//  console.log(searchValue.search("Script"));
+//  console.log(searchValue.search("script"));
+//  console.log(searchValue.search(/script/)); //case-sensitive
+//  console.log(searchValue.search(/script/i)); //non-case-sensitive
+//  console.log(searchValue.search("Java")); //olmayan değerlerde -1 döner
+
+// slice,substring,substr
+// charAt,charCodeAt
+
 
 //stringify: objeyi String'e çevirmek
-var obje={"adi":"Hamit"};
-console.log(obje);
+// var obje={"adi":"Hamit"};
+// console.log(obje);
 
-var objeyistringeCevirdim=JSON.stringify(obje);
-console.log(objeyistringeCevirdim.substring(8,13));
+// var objeyistringeCevirdim=JSON.stringify(obje);
+// console.log(objeyistringeCevirdim.substring(8,13));
 
-//parse: String'i Objeye çevirmek
-var stringObjeyeCevirdim=JSON.parse(objeyistringeCevirdim);
-console.log(stringObjeyeCevirdim);
+// //parse: String'i Objeye çevirmek
+// var stringObjeyeCevirdim=JSON.parse(objeyistringeCevirdim);
+// console.log(stringObjeyeCevirdim);
+
+///////////////////////////////////////////////////////////////////////////////
+//Fonksion
+//returnsuz parametresiz function
+// function toplama1(){
+//     var sayi1=10,sayi2=20,sonuc=0;
+//     sonuc=sayi1+sayi2;
+//     console.log(sonuc);
+// }
+// toplama1()
+
+
+//returnsuz paramereli function
+// function toplama2(sayi1,sayi2){
+//     var sonuc=0;//toplama sıfır
+//     sonuc=sayi1+sayi2;
+//     console.log(sonuc);
+// }
+// toplama2(10,20);
+
+
+
+// //returnlu parametresiz function
+// function toplama3(){
+//     var sayi1=10,sayi2=20,sonuc=0;
+//     sonuc=sayi1+sayi2;
+//    return sonuc;
+// }
+//  var toplamValue=  toplama3();
+//  console.log(toplamValue)
+
+
+//  //returnlu parametresiz function
+// function toplama4(sayi1,sayi2){
+//     sonuc=sayi1+sayi2;
+//     var sonuc;
+//    return sonuc;
+// }
+//  var toplamValue2=  toplama4(10,20);
+//  console.log(toplamValue2)
+
+ ///////////////////////////////////////////
+
+//  //normal
+//  function deneme1(){
+//      console.log("normal function")
+//  }
+//  deneme1();
+
+//  //anonymous function
+//  var sonuc1= function (){
+//     console.log("anonymous function")
+// }
+// sonuc1();
+
+// //arrow function
+// var sonuc2=  ()=>{
+//     console.log("arrow function")
+// }
+// sonuc2();
+
+
+
 
 
 
