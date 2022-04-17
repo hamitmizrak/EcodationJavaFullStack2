@@ -76,27 +76,67 @@
 
 //////////////////////////////////////////////////////////////////
 
-//undefined:tanımsız
- var deneme;
-console.log( deneme)
+// //undefined:tanımsız
+//  var deneme;
+// console.log( deneme)
 
-//NaN: Not a Number
-var result=4/"asd";
-console.log(result)
+// //NaN: Not a Number
+// var result=4/"asd";
+// console.log(result)
 
-//Infinity
-var infinite=9/0;
-console.log(infinite);
+// //Infinity
+// var infinite=9/0;
+// console.log(infinite);
 
-// new
-// hafızada bir değer oluşturmak
+// // new
+// // hafızada bir değer oluşturmak
 
-// null: olan hafızayı yok etmek
-var kelime=null;
-console.log(kelime)
+// // null: olan hafızayı yok etmek
+// var kelime=null;
+// console.log(kelime)
 
-// this
-// nesneyi referans etmek
+// // this
+// // nesneyi referans etmek
+
+
+//////////////////////////////////////////////////////////////////
+//escape character
+// console.log("  \"  ")
+// console.log('  \'  ')
+// console.log("  '  ")
+// console.log("  ``  ")
+// console.log('  "  ')
+
+/////////////////////////////////////////////////////////////////
+
+//revize keyword : for, while,let,const,function değişkende kullanamazsınız
+// var function=44;
+// console.log(function)
+
+/////////////////////////////////////////////////////////////////
+//Math
+console.log(Math.PI);
+console.log(Math.E);
+console.log(Math.max(5,1,5,2,9,12222));
+console.log(Math.min(5,1,-545,2,9,12222));
+console.log("karekök: "+Math.sqrt(16));
+console.log("mutlak: "+Math.abs(-16));
+console.log("üst: "+Math.pow(2,5))
+console.log(Math.floor(12.9));
+console.log(Math.ceil(12.1));
+console.log(Math.round(4.4));
+console.log(Math.round(4.5));
+//kullanıcıdan alınan iki sayıda (prompt,Number()) dört işlem yapacak
+//iki sayı arasındaki en büyük sayının karekökü,mutlak değeri 
+//küçük sayı taban: büyük sayı üst olacak şekilde pow yapacağız
+
+/////////////////////////////////////////////////////////////////
+//SAYILAR
+
+
+
+/////////////////////////////////////////////////////////////////
+//KELİME
 
 
 
