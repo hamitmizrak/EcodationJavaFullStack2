@@ -98,7 +98,6 @@
 // // this
 // // nesneyi referans etmek
 
-
 //////////////////////////////////////////////////////////////////
 //escape character
 // console.log("  \"  ")
@@ -131,9 +130,8 @@
 // console.log( Math.round(Math.random()*4+1));
 
 //kullanıcıdan alınan iki sayıda (prompt,Number()) dört işlem yapacak
-//iki sayı arasındaki en büyük sayının karekökü,mutlak değeri 
+//iki sayı arasındaki en büyük sayının karekökü,mutlak değeri
 //küçük sayı taban: büyük sayı üst olacak şekilde pow yapacağız
-
 
 /////////////////////////////////////////////////////////////////
 //SAYILAR
@@ -147,7 +145,7 @@
 // //hexadecimal:16 tabanlı : 0123456789ABCDEF
 // var hex=0xFF;
 // console.log(hex)
-// //output: 255 
+// //output: 255
 
 // //hexadecimal:16 tabanlı : 0123456789ABCDEF
 // var bina=0b11;
@@ -173,13 +171,12 @@
 // var sayiMi=44;
 // console.log(isNaN(sayiMi));
 
-
 /////////////////////////////////////////////////////////////////
 //KELİME
 
 //kelime=" Enum collection Data structure primitive TYPe "
 
-//Java ile JavaScript aynı method , function 
+//Java ile JavaScript aynı method , function
 // var kelime="http html5 CSS3 Js javase html5";
 // kelime=String(kelime);
 
@@ -205,7 +202,7 @@
 // console.log(kelime.substring(1,6)); //sıfırdan başlar 1<=x<=5-1
 
 // indexOf,lastIndexOf,search ==> arama için kullanıyoruz.
-//search daha ayrıntılı ve filtreleme yaparak arama işlemi yapar
+//  search daha ayrıntılı ve filtreleme yaparak arama işlemi yapar
 //  var searchValue="Script script Script";
 //  console.log(searchValue.indexOf("Script"))
 //  console.log(searchValue.lastIndexOf("Script"))
@@ -218,7 +215,6 @@
 
 // slice,substring,substr
 // charAt,charCodeAt
-
 
 //stringify: objeyi String'e çevirmek
 // var obje={"adi":"Hamit"};
@@ -241,7 +237,6 @@
 // }
 // toplama1()
 
-
 //returnsuz paramereli function
 // function toplama2(sayi1,sayi2){
 //     var sonuc=0;//toplama sıfır
@@ -249,8 +244,6 @@
 //     console.log(sonuc);
 // }
 // toplama2(10,20);
-
-
 
 // //returnlu parametresiz function
 // function toplama3(){
@@ -261,7 +254,6 @@
 //  var toplamValue=  toplama3();
 //  console.log(toplamValue)
 
-
 //  //returnlu parametresiz function
 // function toplama4(sayi1,sayi2){
 //     sonuc=sayi1+sayi2;
@@ -271,40 +263,102 @@
 //  var toplamValue2=  toplama4(10,20);
 //  console.log(toplamValue2)
 
- ///////////////////////////////////////////
+///////////////////////////////////////////
 
 //  //normal
 //  function deneme1(){
 //      console.log("normal function")
 //  }
 //  deneme1();
-
+//
 //  //anonymous function
 //  var sonuc1= function (){
 //     console.log("anonymous function")
 // }
 // sonuc1();
-
+//
 // //arrow function
 // var sonuc2=  ()=>{
 //     console.log("arrow function")
 // }
 // sonuc2();
 
+//Immedia function
+//()()
+// (()=>{
+//     //console.log("normal function")
+// })();
 
+///////////////////////////////////////////
+//loop
+//console.log(1+2+3+4+5+6+7+8+9+10+11+12+13+14+15)
 
+//  //for
+//  function donguFor (){
+//     let sum=0;
+//     //iterative for
+//     for (let i = 1; i <= 10; i++) {
+//         //sum=sum+i;
+//         sum+=i;
+//     }
+//     console.log("toplam for: "+sum);
+//  }
+//  donguFor()
 
+//   //while
+//   function donguWhile (){
+//     let sum=0;
+//     let i = 1;
+//     //iterative for
+//     while ( i <= 10) {
+//         //sum=sum+i;
+//         sum+=i;
+//        i++
+//     }
+//     console.log("toplam while: "+sum);
+//  }
+//  donguWhile()
 
+//for while arasındaki farklar nelerdir ?
 
+///////////////////////////////////////////
+//conditional
+// '44' ==> string
+//  44  ==> number
+// let number1 = () => {
+//   const number = '44' //string
+//   if (number == 44) {
+//     console.log('aynı sayıdır')
+//   } else {
+//     console.log('farklı sayıdır')
+//   }
+// }
+// number1()
+// console.log("************************")
 
+// let number2 = () => {
+//   const number = '44' //string
+//   if (number === 44) {
+//     console.log('aynı sayıdır')
+//   } else {
+//     console.log('farklı sayıdır')
+//   }
+// }
+// number2()
+// console.log("************************")
 
+// //ternary
+// let number3 = () => {
+//   const number = '44' //string
+//   let result =number === 44 ? console.log('aynı sayıdır') : console.log('farklı sayıdır')
+// }
+// number3()
 
-
-
-
-
-
-
-
+/////////////////////////////////////////////////////////
+//1-50 arasındaki sayılar olsun (dahil)
+//s1-) 1-50 sayıları toplayalım ?
+//s2-) ancak sayılardan 5 sayının eklemesin
+//s3-) revize bu sayıları sadece 1-10 arasında olması gerekiyor
+//if , for, break, continue
 
 
