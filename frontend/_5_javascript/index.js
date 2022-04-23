@@ -383,7 +383,6 @@
 //"use strict"
 //public,private,static,class,let,const,implements,extends izin verilmiyor
 
-
 /////////////////////////////////////////////////////////
 // let isNowDate=function(){
 //     let tarih=new Date();
@@ -399,7 +398,6 @@
 
 //Function: date objesinden yılı eğer 2000 üstünde ise milenyum yılı yoksa milenyum değil yazdırsın
 //keyword:if-else ,new Date()
-
 
 // function dateMilenium(){
 //     console.log((new Date().getFullYear()>=2000) ? "Milenyum(+)" : "Milenyum(-)")
@@ -422,7 +420,6 @@
 //   return 3*x+4*k;
 // }
 
-
 //örnek-2
 //Kullanıcı tarafından alınan dereceyi  Fahrenhayta çeviren algoritma yapalım.
 
@@ -432,9 +429,8 @@
 ////document.write(result);
 //function derecedenFahranhayta(x){
 //return (x*9/5)+32
-    //}
+//}
 // (derece*9/5)+32
-    
 
 //örnek-3 operatör
 //4+3*2(3:3-1*6+9:1+(3:3)) hesaplayalım
@@ -451,7 +447,7 @@
 // 5-yuvarlama yapsın 6.0
 // 6-)çıkan sonucu 5 bölsün 6/5=1
 // 7-) iki sayı arasından karşılaştırma yapsın en küçüğünü alsın ve 1 ve 5
-// 8-) küçük sayı eğer tekse 3 eklesin çiftse 5 eklesin 
+// 8-) küçük sayı eğer tekse 3 eklesin çiftse 5 eklesin
 // 9-) çıkan sonucu üslü göstersin  4 ^ 4 = 4 * 4 * 4 *4
 
 //Çözüm:
@@ -460,31 +456,30 @@
 // numberValue= -5.9;  //Number( prompt("lütfen bir sayı giriniz")   );
 // allNumber(numberValue);
 // function allNumber(changeNumberValue1){
-//   changeNumberValue1= Math.round(Math.sqrt(Math.pow(Math.round(Math.abs(numberValue)) ,2)))    ;   
+//   changeNumberValue1= Math.round(Math.sqrt(Math.pow(Math.round(Math.abs(numberValue)) ,2)))    ;
 //   document.write(changeNumberValue1);
-//   
-//   changeNumberValue2=  Math.round(changeNumberValue1/5) ; 
+//
+//   changeNumberValue2=  Math.round(changeNumberValue1/5) ;
 //   document.write(changeNumberValue2);
-//   
+//
 //   if(changeNumberValue1<changeNumberValue2){
 //     numberCompare=changeNumberValue1;
 //   }else{
 //     numberCompare=changeNumberValue2;
 //   }
 //   document.write(" en küçüğü: "+numberCompare)
-//   
+//
 //   //çift sayı
 //   if(numberCompare%2==0){
 //     numberCompare=numberCompare+5;
 //   }else{
 //     numberCompare=numberCompare+3;
 //   }
-//   
+//
 //   document.write(" tek çift: "+numberCompare)
-//   
+//
 //   document.write("sonuc: "+Math.pow(numberCompare,numberCompare))
 // }
-
 
 //Soru verilen bir sayının negatif mi pozitif mi algoritma
 
@@ -496,15 +491,12 @@
 //   document.write(value+" sayısı pozitif");
 // }
 
-
-
 // Soru
 // kullanıcının girdiğini sayıya kadar olan sayılardan; ==>> 1<=X<=kullanıcıgirdiğisayı
 //kaçtane sayı var
 //bu sayılardan kaç tane tek sayı var
 //bu sayılardan kaç tane çift sayı var
 //bu sayıların toplamı
-
 
 //Çözüm
 // var sayi=5;
@@ -525,7 +517,6 @@
 // document.write("kaçtane sayı: "+sayiAdeti+" kaç tane tek sayı: "+ tekSayi+" kaç tane çift sayı: "+ ciftSayi)
 // document.write(" toplam: "+toplam+" ortalaması:"+ortalama)
 
-
 //Soru: kullanıcı tarafından girilen iki değişkenin birbirine eşit olup olmadığını bulan algoritma
 
 //Çözüm:
@@ -533,7 +524,7 @@
 //     while (true) {
 //     var password = prompt("lütfen şifre giriniz");
 //     var rePassword = prompt("lütfen şifreyi tekrar giriniz");
-  
+
 //     if (password === rePassword) {
 //       document.write("teşekkürler aynı şifre");
 //       break;
@@ -544,7 +535,6 @@
 // }
 
 // deneme()
-  
 
 //Date objesinden haftanın hangi gün olduğunu bulan algoritma ?
 //Not: Pazartesi:0 Pazar:6
@@ -572,7 +562,7 @@
 //   case 6:
 //     document.write("cumartesi");
 //     break;
-    
+
 //   case 5:
 //     document.write("cuma");
 //     break;
@@ -581,8 +571,60 @@
 //     break;
 // }
 
+////////////////////////////////////////////////////////////
+// try{
+//     let sayi=3/0;
+// console.log(sayi)
+// }catch(error){
+//     console.log(error.name)
+//     console.log(error.message)
+// }
+
+// console.log("diğer satır")
+
+// try{
+//     denmee
+// }catch(err){
+//     alert(err.name)
+//     alert(err.message)
+//     alert(err.stack)
+// }finally{
+//     console.log("database.close()")
+// }
+
+////////////////////////////////////////////////////////////
+//debug: hata ayıklama
+// function isDebugging(){
+// let sayi1=5;
+// let sayi2=10;
+// let sayi3=15;
+// let sum=sayi1+sayi2+sayi3;
+// console.log(sum)
+// }
+// isDebugging()
+////////////////////////////////////////////////////////////
+// let dataArray=[4,5,6,12,"Hamit",true];
+// //dizi son eleman
+// console.log(dataArray[5])
+// console.log(dataArray[dataArray.length-1])
+// console.log("********************")
+// console.log(dataArray)
 
 
+// //dizinin ilk elemanın karekökü ?
+// console.log(Math.sqrt(dataArray[0]))
 
+function arrayMethod(){
+let dataArray=[10,20,30,40,50];
+console.log(dataArray) 
+let sum=0,averageData=0;
+for (let i = 0; i < dataArray.length; i++) {
+ //console.log(dataArray[i])
+ sum+=dataArray[i]
+}
+console.log(sum)
+console.log(sum/dataArray.length)
+}
+arrayMethod()
 
 
