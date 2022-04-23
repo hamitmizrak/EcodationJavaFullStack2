@@ -630,17 +630,66 @@
 // arrayMethod()
 
 //dizi metotları
-let arr=[10,20,30];
-arr.push(40); //sona ekleme
-arr.unshift(5);//başa ekleme
+// let arr=[10,20,30];
+// arr.push(40); //sona ekleme
+// arr.unshift(5);//başa ekleme
 
-arr.pop(); //sondan 1 eleman çıkartır
-arr.shift(); //baştan 1 eleman çıkartır
-
-
-//iterative for
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i])
-}
+// arr.pop(); //sondan 1 eleman çıkartır
+// arr.shift(); //baştan 1 eleman çıkartır
 
 
+/////
+// //iterative for
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i])
+// }
+// console.log("******************")
+// //for in: sadece indisi verir
+// for( temp in arr ){
+// console.log(temp+". ci indis değeri: "+arr[temp])
+// }
+// console.log("******************")
+
+// //for of
+// for( temp of arr  ){
+//     console.log(temp)
+// }
+
+///////
+// let arr=[10,20,30];
+// arr.push(50); 
+// //1.elemanda diziyi sil
+// delete arr[1]
+// for( temp of arr  ){
+//     console.log(temp)
+// }
+
+
+//sort:küçükten büyüğe doğru sıralar
+// let arr=[50,10,25,1,99];
+// let sortedArray=arr.sort();
+// for( temp of sortedArray  ){
+//     console.log(temp)
+// }
+
+//reverse:büyükten küçüğe doğru sıralar
+// let arr=[50,10,25,1,99];
+// let sortedArray=arr.reverse();
+// for( temp of sortedArray  ){
+//     console.log(temp)
+// }
+
+
+// let arr=[1,2,3];
+// let joinArray=arr.join("*");
+// for( temp of joinArray  ){
+//     console.log(temp)
+// }
+
+// let arr=[1,2,3];
+// console.log(arr)
+
+// let stringData=arr.toString();
+// console.log(stringData)
+
+//////////////////////////////////////////////////////////////////
