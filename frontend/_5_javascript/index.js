@@ -604,6 +604,7 @@
 // }
 // isDebugging()
 ////////////////////////////////////////////////////////////
+//Dizi
 // let dataArray=[4,5,6,12,"Hamit",true];
 // //dizi son eleman
 // console.log(dataArray[5])
@@ -615,17 +616,31 @@
 // //dizinin ilk elemanın karekökü ?
 // console.log(Math.sqrt(dataArray[0]))
 
-function arrayMethod(){
-let dataArray=[10,20,30,40,50];
-console.log(dataArray) 
-let sum=0,averageData=0;
-for (let i = 0; i < dataArray.length; i++) {
- //console.log(dataArray[i])
- sum+=dataArray[i]
+// function arrayMethod(){
+// let dataArray=[10,20,30,40,50];
+// console.log(dataArray) 
+// let sum=0,averageData=0;
+// for (let i = 0; i < dataArray.length; i++) {
+//  //console.log(dataArray[i])
+//  sum+=dataArray[i]
+// }
+// console.log(sum)
+// console.log(sum/dataArray.length)
+// }
+// arrayMethod()
+
+//dizi metotları
+let arr=[10,20,30];
+arr.push(40); //sona ekleme
+arr.unshift(5);//başa ekleme
+
+arr.pop(); //sondan 1 eleman çıkartır
+arr.shift(); //baştan 1 eleman çıkartır
+
+
+//iterative for
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i])
 }
-console.log(sum)
-console.log(sum/dataArray.length)
-}
-arrayMethod()
 
 
