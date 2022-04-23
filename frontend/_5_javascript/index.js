@@ -357,8 +357,232 @@
 /////////////////////////////////////////////////////////
 //1-50 arasındaki sayılar olsun (dahil)
 //s1-) 1-50 sayıları toplayalım ?
-//s2-) ancak sayılardan 5 sayının eklemesin
-//s3-) revize bu sayıları sadece 1-10 arasında olması gerekiyor
+//s2-) ancak sayılardan sadece 5 sayının eklemesin
+//s3-) revize bu sayıları sadece 1-15 arasında olması gerekiyor
+//s3-) bu sayılardan 5' bölünebilenleri çıkartın
 //if , for, break, continue
+//function
+//1-2-3-4-5-6-7-8-9-10-11-12-13-14-15
+// function isSum() {
+//   let sum = 0//function scope
+//   for (let i = 1; i <= 50; i++) {//for
+//       if(i%5===0){//if  %
+//           continue;//sadece o döngüde çalışmasın sonra devam etsin
+//       }
+//       if(i===16)
+//       break;
+//     sum += i
+//   }
+//   console.log(sum)
+// }
+// isSum()
+// //console.log(1+2+3+4+5+6+7+8+9+10+11+12+13+14+15) //120
+// console.log(1+2+3+4+6+7+8+9+11+12+13+14) //90
+
+/////////////////////////////////////////////////////////
+//"use strict"
+//public,private,static,class,let,const,implements,extends izin verilmiyor
+
+
+/////////////////////////////////////////////////////////
+// let isNowDate=function(){
+//     let tarih=new Date();
+//     console.log("full tarih"+tarih)
+//     tarih.setFullYear("1966")//set: yazmak değiştirmek
+//     console.log("yıl: "+tarih.getFullYear())//get çağırmak
+//     console.log("gün: "+tarih.getDay())//pazartesi=0 salı=1 çarşamba=2
+//     console.log("saat: "+tarih.getHours())
+//     console.log("dakika: "+tarih.getMinutes())
+//     console.log("********************")
+// }
+// isNowDate()
+
+//Function: date objesinden yılı eğer 2000 üstünde ise milenyum yılı yoksa milenyum değil yazdırsın
+//keyword:if-else ,new Date()
+
+
+// function dateMilenium(){
+//     console.log((new Date().getFullYear()>=2000) ? "Milenyum(+)" : "Milenyum(-)")
+// }
+// dateMilenium()
+
+///////////////////////////////////////////////////////////////////
+//Örnek-1
+//y=3x+4k ==> 1.dereceden 2 bilinmeyenli denklem
+//Kullanıcı tarafından alınan x ve k değerlerini hesaplayan algoritma yazınız ?
+
+// Çözüm:
+// var x= Number(prompt("lütfen x değerinii giriniz"));
+// var k= Number(prompt("lütfen k değerinii giriniz"));
+
+// var result= birinciDerecedenDenklem(x,k);
+// document.write(result);
+
+// function birinciDerecedenDenklem(x,k){
+//   return 3*x+4*k;
+// }
+
+
+//örnek-2
+//Kullanıcı tarafından alınan dereceyi  Fahrenhayta çeviren algoritma yapalım.
+
+// Çözüm:
+//var derece= Number(prompt("lütfen derece değerini giriniz"));
+//var result= derecedenFahranhayta(derece);
+////document.write(result);
+//function derecedenFahranhayta(x){
+//return (x*9/5)+32
+    //}
+// (derece*9/5)+32
+    
+
+//örnek-3 operatör
+//4+3*2(3:3-1*6+9:1+(3:3)) hesaplayalım
+//4+3*2*(3:3-1*6+9:1+(3:3))
+//var value= 4+3*2*(3/3-1*6+9/1+(3/3));
+//document.write(  value    );
+
+//örnek-4 Math
+// Soru: -5.9 sayısını aşağıdaki işlemleri yapalım
+// 1-mutlak değeri alsın 5.9
+// 2-yuvarlama yapsın  6.0
+// 3-karesini alsın 36.00
+// 4-karekök alsın  6.0
+// 5-yuvarlama yapsın 6.0
+// 6-)çıkan sonucu 5 bölsün 6/5=1
+// 7-) iki sayı arasından karşılaştırma yapsın en küçüğünü alsın ve 1 ve 5
+// 8-) küçük sayı eğer tekse 3 eklesin çiftse 5 eklesin 
+// 9-) çıkan sonucu üslü göstersin  4 ^ 4 = 4 * 4 * 4 *4
+
+//Çözüm:
+//var numberValue= Number( prompt("lütfen bir sayı giriniz")   );
+// var numberValue,changeNumberValue1,changeNumberValue2,numberCompare;
+// numberValue= -5.9;  //Number( prompt("lütfen bir sayı giriniz")   );
+// allNumber(numberValue);
+// function allNumber(changeNumberValue1){
+//   changeNumberValue1= Math.round(Math.sqrt(Math.pow(Math.round(Math.abs(numberValue)) ,2)))    ;   
+//   document.write(changeNumberValue1);
+//   
+//   changeNumberValue2=  Math.round(changeNumberValue1/5) ; 
+//   document.write(changeNumberValue2);
+//   
+//   if(changeNumberValue1<changeNumberValue2){
+//     numberCompare=changeNumberValue1;
+//   }else{
+//     numberCompare=changeNumberValue2;
+//   }
+//   document.write(" en küçüğü: "+numberCompare)
+//   
+//   //çift sayı
+//   if(numberCompare%2==0){
+//     numberCompare=numberCompare+5;
+//   }else{
+//     numberCompare=numberCompare+3;
+//   }
+//   
+//   document.write(" tek çift: "+numberCompare)
+//   
+//   document.write("sonuc: "+Math.pow(numberCompare,numberCompare))
+// }
+
+
+//Soru verilen bir sayının negatif mi pozitif mi algoritma
+
+//Çözüm
+// var value= -4;
+// if(value<0){
+//   document.write(value+" sayısı negatif");
+// }else{
+//   document.write(value+" sayısı pozitif");
+// }
+
+
+
+// Soru
+// kullanıcının girdiğini sayıya kadar olan sayılardan; ==>> 1<=X<=kullanıcıgirdiğisayı
+//kaçtane sayı var
+//bu sayılardan kaç tane tek sayı var
+//bu sayılardan kaç tane çift sayı var
+//bu sayıların toplamı
+
+
+//Çözüm
+// var sayi=5;
+// var sayiAdeti=0,ciftSayi=0,tekSayi=0,toplam=0,ortalama=0;
+// // 1 2  3 4 5
+// for(var i=1; i<=sayi; i++){
+//   sayiAdeti++;
+//   if(i%2==0){
+//     ciftSayi++;
+//   }else{
+//      tekSayi++;
+//   }
+//   toplam+=i;
+// }
+
+// ortalama=toplam/sayiAdeti;
+
+// document.write("kaçtane sayı: "+sayiAdeti+" kaç tane tek sayı: "+ tekSayi+" kaç tane çift sayı: "+ ciftSayi)
+// document.write(" toplam: "+toplam+" ortalaması:"+ortalama)
+
+
+//Soru: kullanıcı tarafından girilen iki değişkenin birbirine eşit olup olmadığını bulan algoritma
+
+//Çözüm:
+// function deneme(){
+//     while (true) {
+//     var password = prompt("lütfen şifre giriniz");
+//     var rePassword = prompt("lütfen şifreyi tekrar giriniz");
+  
+//     if (password === rePassword) {
+//       document.write("teşekkürler aynı şifre");
+//       break;
+//     } else {
+//       document.write("farklı şifre tekrar giriniz");
+//     }
+//   }
+// }
+
+// deneme()
+  
+
+//Date objesinden haftanın hangi gün olduğunu bulan algoritma ?
+//Not: Pazartesi:0 Pazar:6
+
+//Çözüm
+// var gun =new Date().getDay();
+// //document.write(gun);
+
+// switch (gun) {
+//   case 0:
+//     document.write("pazar");
+//     break;
+//   case 1:
+//     document.write("pazartesi");
+//     break;
+//   case 2:
+//     document.write("salı");
+//     break;
+//   case 3:
+//     document.write("çarşamba");
+//     break;
+//   case 4:
+//     document.write("perşembe");
+//     break;
+//   case 6:
+//     document.write("cumartesi");
+//     break;
+    
+//   case 5:
+//     document.write("cuma");
+//     break;
+//   default:
+//     document.write("farklı sayı girildi böyle bir gün yoktur");
+//     break;
+// }
+
+
+
+
 
 
