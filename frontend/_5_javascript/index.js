@@ -1,4 +1,4 @@
-//single-line comment
+// single-line comment
 /* multi-line comment */
 
 //çıktı
@@ -7,6 +7,14 @@
 // console.log("Console yani software level");
 // document.write("Html çıktısı");
 
+// let tipo1={};
+// console.log(typeof tipo1)
+
+//instanceof
+// let dizi4=["Java","Html","Css"];
+// console.log(dizi4 instanceof Array)
+// console.log(dizi4 instanceof Object)
+
 //variable
 //var deneme;
 // deneme="JavaScript dersi";
@@ -14,7 +22,7 @@
 //deneme=44;
 //alert(deneme)
 
-//whoisting
+// whoisting
 // deneme="JavaScript dersi";
 // var deneme;
 // alert(deneme);
@@ -38,10 +46,20 @@
 // var kelime_diger=44;
 //var sayisalTeknoloji;//camel case
 
+//hata
 // var 55kelime12=44;
 // var kelime-diger=44;
 // var +55kelime12=44;
 // var ~55kelime12=44;
+
+// let isim="Hamit"; //string,number,boolean
+// let dizi=[]; //dizi
+// let object={}; //obje
+/*
+""
+''
+``
+*/
 
 ///////////////////////////////////////////////////////////////////
 //operatörler
@@ -53,11 +71,11 @@
 // document.write(docum)
 
 //typeof: değişken türü nedir
-// var obj=44;
-// var obj=34.55;
-// var obj="merhabalar";
+// var variable=44;
+// var variable=34.55;
+// var variable="merhabalar";
 // var obj={};
-// var obj=[];
+// var dizi=[];
 // document.write(typeof obj)
 //////////////////////////////////////////////////////////////////
 //prompt: kullanıcıdan veri almak istediğimizde kullanıyoruz.
@@ -125,6 +143,19 @@
 // console.log(Math.ceil(12.1));
 // console.log(Math.round(4.4));
 // console.log(Math.round(4.5));
+
+// //undefined
+// var deneme;
+// console.log(deneme)
+
+// //NaN
+// var deneme2=4/"asd";
+// console.log(deneme2)
+
+// //inifinity
+// var deneme3=4/0;
+// console.log(deneme3)
+//escape \
 
 ///Random:rastgele
 // console.log( Math.round(Math.random()*4+1));
@@ -262,6 +293,8 @@
 // }
 //  var toplamValue2=  toplama4(10,20);
 //  console.log(toplamValue2)
+
+//javascript senkron mu asenkron mu ?
 
 ///////////////////////////////////////////
 
@@ -571,6 +604,87 @@
 //     break;
 // }
 
+// function result() {
+//   var numberValue = 4
+
+//   //ternary
+//   let val = numberValue != 4 ? console.log('4 değil') : console.log('4')
+//   console.log(val)
+
+//   //
+//   if (numberValue != 4) {
+//     console.log('4 değil')
+//   } else {
+//     console.log('4 ')
+//   }
+
+//   //if elseif elseif else
+//   var numberValue2 = 8
+//   if (numberValue2 == 1) {
+//     console.log('1')
+//   } else if (numberValue2 == 2) {
+//     console.log('2')
+//   } else if (numberValue2 == 3) {
+//     console.log('3')
+//   } else if (numberValue2 == 4) {
+//     console.log('4')
+//   } else if (numberValue2 == 5) {
+//     console.log('5')
+//   } else if (numberValue2 == 6) {
+//     console.log('6')
+//   } else if (numberValue2 == 7) {
+//     console.log('7')
+//   } else {
+//     console.log('8')
+//   }
+
+//   //switch case
+//   switch (numberValue2) {
+//     case 1:
+//       console.log('1')
+//       break
+
+//     case 2:
+//       console.log('2')
+//       break
+
+//     case 3:
+//       console.log('3')
+//       break
+
+//     case 4:
+//       console.log('4')
+//       break
+
+//     case 5:
+//       console.log('5')
+//       break
+
+//     case 6:
+//       console.log('6')
+//       break
+
+//     case 7:
+//       console.log('7')
+//       break
+
+//     default:
+//       console.log('8')
+//       break
+//   }
+// }
+// result()
+
+
+// let isDebugging=()=>{
+//     var sayi1=1;
+//     var sayi2=2;
+//     var sayi3=3;
+//     var toplam=sayi1+sayi2+sayi3;
+//     console.log(toplam)
+// }
+// isDebugging()
+
 ////////////////////////////////////////////////////////////
 
 //// try{
@@ -612,13 +726,12 @@
 // console.log("********************")
 // console.log(dataArray)
 
-
 // //dizinin ilk elemanın karekökü ?
 // console.log(Math.sqrt(dataArray[0]))
 
 // function arrayMethod(){
 // let dataArray=[10,20,30,40,50];
-// console.log(dataArray) 
+// console.log(dataArray)
 // let sum=0,averageData=0;
 // for (let i = 0; i < dataArray.length; i++) {
 //  //console.log(dataArray[i])
@@ -636,7 +749,6 @@
 
 // arr.pop(); //sondan 1 eleman çıkartır
 // arr.shift(); //baştan 1 eleman çıkartır
-
 
 /////
 // //iterative for
@@ -657,13 +769,12 @@
 
 ///////
 // let arr=[10,20,30];
-// arr.push(50); 
+// arr.push(50);
 // //1.elemanda diziyi sil
 // delete arr[1]
 // for( temp of arr  ){
 //     console.log(temp)
 // }
-
 
 //sort:küçükten büyüğe doğru sıralar
 // let arr=[50,10,25,1,99];
@@ -679,7 +790,6 @@
 //     console.log(temp)
 // }
 
-
 // let arr=[1,2,3];
 // let joinArray=arr.join("*");
 // for( temp of joinArray  ){
@@ -693,3 +803,55 @@
 // console.log(stringData)
 
 //////////////////////////////////////////////////////////////////
+// let dizi=["Html5","Css3","Responsive Design","Javascript"];
+// dizi.push("jquery");
+// dizi.unshift("Git");
+// console.log(dizi);
+// console.log(dizi[0]);
+// console.log(dizi[dizi.length-1]);
+
+// console.log("*************")
+// //iterative for
+// for (let i = 0; i < dizi.length; i++) {
+//     //console.log(dizi[i]);
+    
+// }
+
+// //for in : numara + data
+// for(let temp in  dizi  ){
+// //console.log(temp+". "+dizi[temp])
+// }
+
+// //for of : data
+// for(let temp  of  dizi ){
+// //console.log(temp)
+// }
+
+let dizi=[0,1,2,3,4,5,6,7,8,9];
+//splice
+
+//verdiğimiz indis numarasında itibaren siler
+//output: 0 1 2 
+//dizi.splice(3)
+
+//dizideki eleman aralığı silmek
+//3: başlama indisi
+//2: silinecek eleman sayısı
+//output:0 1 2 5 6 7 8 9 
+//dizi.splice(3,2);
+
+//ekleme-güncelleme: 
+//0:silinecek başlama indisi
+//3:silinecek eleman sayısı
+//66: silindikten sonra görülecek
+//output: 66 3 4 5 6 7 8 9 
+//dizi.splice(0,3,66);
+
+for (let i = 0; i < dizi.length; i++) {
+    console.log(dizi[i])
+    document.write(dizi[i]+" ")
+ }
+
+
+
+
