@@ -827,31 +827,144 @@
 // //console.log(temp)
 // }
 
-let dizi=[0,1,2,3,4,5,6,7,8,9];
-//splice
+// let dizi=[0,1,2,3,4,5,6,7,8,9];
+// //splice
 
-//verdiğimiz indis numarasında itibaren siler
-//output: 0 1 2 
-//dizi.splice(3)
+// dizi.splice(3)
+// //verdiğimiz indis numarasında itibaren siler
+// //output: 0 1 2 
 
-//dizideki eleman aralığı silmek
-//3: başlama indisi
-//2: silinecek eleman sayısı
-//output:0 1 2 5 6 7 8 9 
-//dizi.splice(3,2);
+// dizi.splice(3,2);
+// //dizideki eleman aralığı silmek
+// //3: başlama indisi
+// //2: silinecek eleman sayısı
+// //output:0 1 2 5 6 7 8 9 
 
-//ekleme-güncelleme: 
-//0:silinecek başlama indisi
-//3:silinecek eleman sayısı
-//66: silindikten sonra görülecek
-//output: 66 3 4 5 6 7 8 9 
-//dizi.splice(0,3,66);
+// dizi.splice(0,3,66);
+// // //ekleme-güncelleme: 
+// // //0:silinecek başlama indisi
+// // //3:silinecek eleman sayısı
+// // //66: silindikten sonra görülecek
+// //output: 66 3 4 5 6 7 8 9 
 
-for (let i = 0; i < dizi.length; i++) {
-    console.log(dizi[i])
-    document.write(dizi[i]+" ")
- }
+// dizi.splice(0,0,66)
+//başına ekler
 
+// for (let i = 0; i < dizi.length; i++) {
+//     console.log(dizi[i])
+//     document.write(dizi[i])
+//  }
 
+//let dizi=["Html5","Css3","Responsive Design","Javascript"];
 
+//join:dizideki her bir elemanın sonuna eklemek
+//document.write(dizi.join("+"))
 
+//concat: sadece son elemana + eklensin
+//document.write(dizi.concat("+"));
+
+//toString(): diziyi String'e çevirir
+//document.write(dizi.toString())
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//normal
+// function normal1(sayi1,sayi2){
+//     return sayi1*sayi2;
+// }
+
+// function normal2(){
+//     console.log(normal1(4,6));
+// }
+// normal2()
+
+// //callbackfunction
+// function call1(sayi1,sayi2,deneme){
+//     let multiple=sayi1*sayi2;
+//     deneme(multiple)
+// }
+
+// function call2(multiple){
+//     console.log(multiple)
+// }
+
+// call1(4,6,call2)
+
+///////////////////////////////////////////////////////////////
+// let person={
+//     "adi":"Hamit",
+//     "soyadi":"Mızrak",
+//     "isLogin":true,
+//     "meslek":"Bilgisayar Müh",
+//     "teknolojiler":["java","mysql","h2db"],
+//     "fullSoftware":function(){
+//     return this.database.toUpperCase().concat(" ")+this.frontend.toUpperCase();
+//     },
+//     "java":{
+//         "db":"h2db",
+//         "javaee":["servlet","JSP","JSF"]
+//     }
+// };
+// console.log(person)
+
+// const software={
+//     "database":"Mysql",
+//     "frontend":"Html",
+//     "backend":["Python",'C#',"Java"],
+//     "fullSoftware":function(){
+//         //objede isem ve datalara erişmek istersem this kullanmalıyım
+//         return this.database.toUpperCase().concat(" ")+this.frontend.toUpperCase();
+//         },
+//     version:{
+//         "name":"adi1",
+//         "date":"2022"
+//     }    
+// }
+// console.log(software);
+// console.log(software.database);
+// console.log(software.fullSoftware());
+
+// //object create attributes added
+// software.mobillang="flutter";
+// console.log(software);
+
+// console.log("***************")
+// //object delete attribues
+// delete software["frontend"]
+// console.log(software);
+
+// console.log("***************")
+// //nested object
+// console.log(software.version.name)
+
+// //array
+// console.log(software.backend[1])
+
+//Teacher
+
+////////////////////////////////////////////////
+// let student={};
+// console.log(student)
+
+//parametreli constructor
+function Student(adi,soyadi,yas){
+this.adi=adi;
+this.soyadi=soyadi;
+this.yas=yas;
+console.log(this);
+this.dogumTarihi=function(){
+   return new Date().getFullYear()-yas;
+}
+}
+
+let result55=new Student("Ahmet","Yerli",37);
+//console.log(result55.dogumTarihi())
+
+//event
+function eventNowDate(){
+    alert("Tıklandı")
+}
+
+//DOM
+function  domEvent(){
+    document.getElementById("dom_id").innerHTML="<b><mark>Ben Dom</mark>  </b>";
+}
