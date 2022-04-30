@@ -13,7 +13,6 @@ public class _12_Java {
         //metotda olursa override edemeyiz
 
         //Metotlar
-        //Diziler
         //OOP:inheritance,abstract,interface
         //Polymorphism
         //Class: access modifier
