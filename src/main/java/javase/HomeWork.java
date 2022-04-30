@@ -5,4 +5,9 @@ public class HomeWork {
     //Stack memory - Heap memory nedir arasındaki farklar
 
     //runtime error / compiler time error
+
+    //Cast
+    //valueOf - parseInt
+
+    //for ile while arasındaki fark
 }

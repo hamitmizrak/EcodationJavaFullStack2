@@ -25,5 +25,11 @@ public class _04_Java {
         System.out.println(adi.indexOf("Java"));
         System.out.println(adi.lastIndexOf("Java"));
         System.out.println(adi.replace(adi,"Java Jsp Java JSF"));
+
+        //new null sıfır
+        //System
+        /*System.out */
+        /*System.in*/
+        System.err.println("Hata");
     }
 }
