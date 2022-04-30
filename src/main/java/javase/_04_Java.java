@@ -25,10 +25,5 @@ public class _04_Java {
         System.out.println(adi.indexOf("Java"));
         System.out.println(adi.lastIndexOf("Java"));
         System.out.println(adi.replace(adi,"Java Jsp Java JSF"));
-
-//        System.out.println(adi.);
-//        System.out.println(adi.);
-//        System.out.println(adi.);
-
     }
 }
