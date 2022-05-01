@@ -22,4 +22,8 @@ public class HomeWork {
     // Agile
     // scrum
     // Jira
+
+    //UML Diagramı nedir ?
+    //ERD Diagramı nedir ?
+    //https://www.youtube.com/watch?v=qKB-1vFur-g  ==> 1000 Test Soru
 }
