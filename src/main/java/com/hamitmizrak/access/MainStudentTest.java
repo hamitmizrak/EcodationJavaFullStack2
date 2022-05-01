@@ -7,6 +7,12 @@ public class MainStudentTest {
         Student student=new Student("Hamit");
         System.out.println(student);
 
+        if(student instanceof Student){
+            System.out.println("Aynı Object");
+        }else{
+            System.out.println("Farklı Object");
+        }
+
         StudentLombok studentLombok=StudentLombok.builder().studentName("Hamit").build();
         System.out.println(studentLombok);
 
