@@ -11,5 +11,4 @@ public class _18_RandomUUID {
         System.out.println(uuid);
         log.info(uuid);
     }
-
 }
