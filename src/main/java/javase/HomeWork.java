@@ -10,4 +10,6 @@ public class HomeWork {
     //valueOf - parseInt
 
     //for ile while arasındaki fark
+
+    //Java By pass value ?
 }
