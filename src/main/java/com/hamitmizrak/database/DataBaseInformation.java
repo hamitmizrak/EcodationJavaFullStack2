@@ -15,5 +15,12 @@ public class DataBaseInformation {
         this.userName="root";
         this.userPassword="root";
         this.forNameData="com.mysql.jdbc.Driver";
+
+        //H2Db
+        //http://localhost:8080/h2-console
+//        this.url="jdbc:h2:file:./memory_persist/denemedb";
+//        this.userName="root";
+//        this.userPassword="root";
+//        this.forNameData="org.h2.Driver";
     }
 }

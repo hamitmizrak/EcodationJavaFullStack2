@@ -10,7 +10,7 @@ public class AdminController implements IDaoConnection<AdminDto> {
     AdminDao adminDao;
 
     public AdminController() {
-         adminDao=new AdminDao();
+        adminDao = new AdminDao();
     }
 
     @Override
@@ -21,7 +21,7 @@ public class AdminController implements IDaoConnection<AdminDto> {
 
     @Override
     public void update(AdminDto adminDto) {
-
+        this.adminDao.update(adminDto);
     }
 
     @Override
