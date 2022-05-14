@@ -32,7 +32,6 @@ public class DatabaseConnection extends DataBaseInformation {
     }
 
     public static DatabaseConnection getInstance() {
-
         try {
             if (instance == null || instance.connection.isClosed()) {
                 instance = new DatabaseConnection();
@@ -44,6 +43,7 @@ public class DatabaseConnection extends DataBaseInformation {
         return instance;
     }
 
+    //connection
     public Connection getConnection() {
         return connection;
     }
