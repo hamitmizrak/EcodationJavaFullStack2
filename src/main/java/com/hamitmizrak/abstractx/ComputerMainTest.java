@@ -20,6 +20,5 @@ public class ComputerMainTest {
         asus2.setComputerTrade("asus");
         asus2.govdesizMethod();//polymorphism
         System.out.println(asus2);
-
     }
 }
