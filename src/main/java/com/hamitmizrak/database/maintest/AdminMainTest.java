@@ -20,13 +20,21 @@ public class AdminMainTest {
         */
 
         //UPDATE
-        String adi, soyadi;
+        /*
+
+               String adi, soyadi;
         long id;
         id=Long.valueOf(JOptionPane.showInputDialog("id giriniz"));
         adi = JOptionPane.showInputDialog("Güncel adı giriniz");
         soyadi = JOptionPane.showInputDialog("Güncel Soyadı giriniz");
         AdminDto adminDto = AdminDto.builder().adminId(id).name(adi).surname(soyadi).build();
         adminController.update(adminDto);
+         */
 
+
+        long id;
+        id=Long.valueOf(JOptionPane.showInputDialog("silmek id giriniz"));
+        AdminDto adminDto = AdminDto.builder().adminId(id).build();
+        adminController.delete(adminDto);
     }
 }

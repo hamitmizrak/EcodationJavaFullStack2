@@ -26,7 +26,7 @@ public class AdminController implements IDaoConnection<AdminDto> {
 
     @Override
     public void delete(AdminDto adminDto) {
-
+        this.adminDao.delete(adminDto);
     }
 
     @Override

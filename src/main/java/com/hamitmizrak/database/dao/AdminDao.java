@@ -59,7 +59,21 @@ public class AdminDao implements IDaoConnection<AdminDto> {
 
     @Override
     public void delete(AdminDto adminDto) {
-
+        try (Connection connection = getInterfaceConnection()) {
+            //delete from admin where id=3;
+            String sql = "delete from admin where id=?";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+           preparedStatement.setLong(1,adminDto.getAdminId());
+            int rowEffected=  preparedStatement.executeUpdate();
+            if(rowEffected>0){
+                log.info("AdminDao Silme Başarılı");
+            }else{
+                log.error("AdminDao Silme Başarısız...");
+            }
+        } catch (Exception e) {
+            log.error(AdminDao.class + "  Silme sırasında hata meydana geldi");
+            e.printStackTrace();
+        }
     }
 
     @Override
