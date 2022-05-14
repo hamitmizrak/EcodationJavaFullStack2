@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 @Log4j2
@@ -78,6 +79,25 @@ public class AdminDao implements IDaoConnection<AdminDto> {
 
     @Override
     public ArrayList<AdminDto> list() {
-        return null;
+        ArrayList<AdminDto> listem=new ArrayList<>();
+        AdminDto adminDto;
+        try (Connection connection = getInterfaceConnection()) {
+            //select * from admin;
+            String sql = "select * from admin";
+            PreparedStatement preparedStatement=connection.prepareStatement(sql);
+            ResultSet resultSet= preparedStatement.executeQuery();
+            while(resultSet.next()){
+                adminDto=new AdminDto();
+                adminDto.setAdminId(resultSet.getInt("id"));
+                adminDto.setName(resultSet.getString("name"));
+                adminDto.setSurname(resultSet.getString("surname"));
+                adminDto.setCreatedDate(resultSet.getDate("created_date"));
+                listem.add(adminDto);
+            }
+        } catch (Exception e) {
+            log.error(AdminDao.class + "  Silme sırasında hata meydana geldi");
+            e.printStackTrace();
+        }
+        return listem;
     }
 }

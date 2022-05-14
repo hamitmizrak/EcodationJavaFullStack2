@@ -22,9 +22,9 @@ public class DatabaseConnection extends DataBaseInformation {
     private DatabaseConnection() {
         try {
             Class.forName(this.getForNameData());
-            log.info("Driver Success");
+           // log.info("Driver Success");
             connection = DriverManager.getConnection(url, userName, userPassword);
-            log.info("Connection Success");
+           // log.info("Connection Success");
         } catch (Exception e) {
             log.error("Database Error is not");
             e.printStackTrace();

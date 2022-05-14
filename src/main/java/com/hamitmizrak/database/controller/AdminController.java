@@ -31,6 +31,6 @@ public class AdminController implements IDaoConnection<AdminDto> {
 
     @Override
     public ArrayList<AdminDto> list() {
-        return null;
+        return this.adminDao.list();
     }
 }
