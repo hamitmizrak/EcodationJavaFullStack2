@@ -33,6 +33,8 @@ public class AdminDao implements IDaoConnection<AdminDto> {
         }
     }
 
+    //statement
+    //preparentStatement  ? = bana burda bir şey gelecek bende bunu ekliyeceğim
     @Override
     public void update(AdminDto adminDto) {
         try (Connection connection = getInterfaceConnection()) {
