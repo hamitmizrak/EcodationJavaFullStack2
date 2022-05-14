@@ -14,7 +14,8 @@ public class DataBaseInformation {
         this.url="jdbc:mysql://localhost:3306/employee_management_system";
         this.userName="root";
         this.userPassword="root";
-        this.forNameData="com.mysql.jdbc.Driver";
+        //this.forNameData="com.mysql.jdbc.Driver";
+        this.forNameData="com.mysql.cj.jdbc.Driver";
 
         //H2Db
         //http://localhost:8080/h2-console
