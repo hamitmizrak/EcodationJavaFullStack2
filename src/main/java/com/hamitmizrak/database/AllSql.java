@@ -13,7 +13,7 @@ CREATE TABLE `employee_management_system`.`admin` (
   `name` VARCHAR(150) NULL,
   `surname` VARCHAR(150) BINARY NULL,
   `created_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`));
+   PRIMARY KEY (`id`));
 
 
     SELECT * FROM employee_management_system.admin;
