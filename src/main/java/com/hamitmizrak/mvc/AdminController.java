@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AdminController {
 
-
     //http://localhost:8080/controller0
     @GetMapping("/controller0")
     @ResponseBody
@@ -26,6 +25,7 @@ public class AdminController {
 
     //String
     //http://localhost:8080/controller2
+    //MVC nedir ?
     @GetMapping("/controller2")
     public String getController2(Model model) {
         model.addAttribute("key", "modelden geldim");
