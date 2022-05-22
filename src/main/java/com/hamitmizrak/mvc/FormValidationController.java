@@ -10,10 +10,43 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 @Controller
 @Log4j2
 public class FormValidationController {
+
+    private static final String PATH="C:\\file\\mvc.txt";
+
+    //Yazmak
+    public void fileWriter(String  registerDto){
+        try(BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter(PATH,true))){
+            bufferedWriter.append(registerDto);
+            bufferedWriter.flush();
+        }catch (Exception e){
+            log.error("Yazmada Sıkıntı oluştu");
+            e.printStackTrace();
+        }
+    }
+
+    //Okumak
+    public void fileReader(){
+        try(BufferedReader bufferedReader=new BufferedReader(new FileReader(PATH))){
+           StringBuilder builder=new StringBuilder();
+           String satir="";
+           while( (satir=bufferedReader.readLine())!=null){
+               builder.append(satir+"\n");
+           }
+           log.info("Okuyorum"+builder.toString());
+        }catch (Exception e){
+            log.error("Yazmada Sıkıntı oluştu");
+            e.printStackTrace();
+        }
+    }
+
 
     //http://localhost:8080/validation
     @GetMapping("validation")
@@ -29,7 +62,12 @@ public class FormValidationController {
         log.error("Hata oluştur");
         return "validation_page";
     }
+    //Database
+    // dosyaya kaydetmek
+    FormValidationController controller=new FormValidationController();
+    controller.fileWriter(registerDto+"");
     log.info(registerDto);
+    controller.fileReader();
         return "success";
     }
 
