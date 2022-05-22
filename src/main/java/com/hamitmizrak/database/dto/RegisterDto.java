@@ -45,4 +45,10 @@ public class RegisterDto {
         String changeDate=simpleDateFormat.format(new Date(System.currentTimeMillis()));
         return changeDate;
     }
+
+    //CV
+    // userName
+    // userSurname
+    // userEmail
+    // userMessage
 }
