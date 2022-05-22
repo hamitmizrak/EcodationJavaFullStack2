@@ -6,6 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class AdminController {
 
@@ -35,7 +38,6 @@ public class AdminController {
         return "thymeleaf2";
     }
 
-
     //Object
     //http://localhost:8080/controller3
     @GetMapping("/controller3")
@@ -45,5 +47,16 @@ public class AdminController {
         return "thymeleaf3";
     }
 
+    //Object List
+    //http://localhost:8080/controller4
+    @GetMapping("/controller4")
+    public String getController4(Model model) {
+        List<AdminDto> adminDtoList=new ArrayList<>();
+        for (int i = 1; i <=10 ; i++) {
+            adminDtoList.add(new AdminDto(i,"name"+i," surname "+i)  );
+        }
+        model.addAttribute("key", adminDtoList);
+        return "thymeleaf4";
+    }
 
 }

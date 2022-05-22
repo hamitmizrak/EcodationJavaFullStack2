@@ -16,4 +16,10 @@ public class AdminDto {
     private String name;
     private String surname;
     private Date createdDate;
+
+    public AdminDto(long adminId, String name, String surname) {
+        this.adminId = adminId;
+        this.name = name;
+        this.surname = surname;
+    }
 }
