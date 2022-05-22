@@ -12,6 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
     public static void main(String[] args) {
+        System.setProperty("spring.devtools.restart.enabled","true");
+        System.setProperty("java.awt.headless", "false"); //Disables headless
         SpringApplication.run(Application.class, args);
     }
 }

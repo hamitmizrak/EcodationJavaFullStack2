@@ -39,37 +39,8 @@
 
     <!-- start codes -->
    <!-- <p  th:text="${key}"></p>-->
-<p class="display-5 mt-3 mb-1">Listem</p>
-    <table  class="table table-hover table-striped ">
-        <thead>
-        <tr class="text-warning">
-            <th>ID</th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th>Price</th>
-            <th>Result</th>
-            <th>View</th>
-            <th>Update</th>
-            <th>Delete</th>
-        </tr>
-        </thead>
+<p th:text="${key}" class="display-5 mt-3 mb-1"></p>
 
-        <tbody>
-        <tr th:each="key:${key}">
-            <td th:text="${key.adminId}"></td>
-            <td  th:text="${key.name}"></td>
-            <td  th:text="${key.surname}"></td>
-            <td  th:text="${key.price}"></td>
-            <td  th:if="${key.price>=5000}" th:text="Pahalı"  ></td>
-            <td  th:unless="${key.price>=5000}" th:text="Ucuz"  ></td>
-            <td> <button class="btn btn-secondary">Detay</button> </td>
-            <td> <button class="btn btn-primary">Güncelle</button> </td>
-            <td> <button class="btn btn-danger">Sil</button> </td>
-        </tr>
-
-        </tbody>
-
-    </table>
 
     <!-- ends codes -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

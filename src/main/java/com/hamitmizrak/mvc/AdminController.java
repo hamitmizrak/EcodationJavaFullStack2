@@ -4,6 +4,8 @@ import com.hamitmizrak.database.dto.AdminDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -53,10 +55,36 @@ public class AdminController {
     public String getController4(Model model) {
         List<AdminDto> adminDtoList=new ArrayList<>();
         for (int i = 1; i <=10 ; i++) {
-            adminDtoList.add(new AdminDto(i,"name"+i," surname "+i)  );
+            adminDtoList.add(new AdminDto(i,"name"+i," surname "+i,1000*i)  );
         }
         model.addAttribute("key", adminDtoList);
         return "thymeleaf4";
+    }
+
+    //+++PathVariable+++
+    //http://localhost:8080/controller5/4
+    //http://localhost:8080/controller5
+    @GetMapping({"/controller5","/controller5/{id}"})
+    public String getController5(Model model, @PathVariable(name = "id",required = false) Long data) {
+        if(data==null){
+            model.addAttribute("key", "ID bulunamadı ");
+        }else{
+            model.addAttribute("key", "ID: "+data);
+        }
+        return "thymeleaf5";
+    }
+
+    //+++RequestParam+++
+    // http://localhost:8080/controller6?adi=Hamit&soyadi=Mızrak
+    // http://localhost:8080/controller6?adi=Hamit&soyadi=Mızrak&id=4
+    @GetMapping("controller6")
+    public String getController6(Model model,
+                                 @RequestParam(name = "adi") String  adi,
+                                 @RequestParam(name = "soyadi") String  soyadi ,
+                                 @RequestParam(name = "id" ,required = false,defaultValue ="0") Long  id
+    ) {
+            model.addAttribute("key", "ID: "+id+ " Adı: "+adi+" Soyadı: "+soyadi);
+        return "thymeleaf6";
     }
 
 }
