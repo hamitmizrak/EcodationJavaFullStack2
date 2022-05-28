@@ -1,4 +1,4 @@
-package com.hamitmizrak.access;
+package com.hamitmizrak.tutorials;
 
 import javase._17_Encapsulation;
 

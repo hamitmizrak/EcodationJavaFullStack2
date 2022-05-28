@@ -1,4 +1,4 @@
-package com.hamitmizrak.abstractx;
+package com.hamitmizrak.tutorials;
 
 public class AsusAbstract extends ComputerAbstract {
 

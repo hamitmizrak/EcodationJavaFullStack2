@@ -1,4 +1,4 @@
-package com.hamitmizrak.access;
+package com.hamitmizrak.tutorials;
 
 
 import lombok.Getter;

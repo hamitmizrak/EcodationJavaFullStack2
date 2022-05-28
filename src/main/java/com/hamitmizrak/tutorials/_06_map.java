@@ -1,4 +1,4 @@
-package com.hamitmizrak.java8information;
+package com.hamitmizrak.tutorials;
 
 import lombok.extern.log4j.Log4j2;
 

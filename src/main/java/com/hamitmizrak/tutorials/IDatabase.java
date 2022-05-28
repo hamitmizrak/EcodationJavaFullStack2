@@ -1,4 +1,4 @@
-package com.hamitmizrak.interfacex;
+package com.hamitmizrak.tutorials;
 
 public interface IDatabase {
 

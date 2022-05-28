@@ -1,10 +1,12 @@
-package com.hamitmizrak.aynipaket;
+package com.hamitmizrak.tutorials;
+
+
 
 public class Teacher {
 
 
     public static void main(String[] args) {
-        Student stu=new Student();
+    /*    com.hamitmizrak.aynipaket.Student stu=new Student();
 
         String exam1=stu.studentPublic;
         System.out.println(exam1);
@@ -16,6 +18,6 @@ public class Teacher {
 //        System.out.println(exam3);
 
         String exam4=stu.studentDefault;
-        System.out.println(exam4);
+        System.out.println(exam4);*/
     }
 }

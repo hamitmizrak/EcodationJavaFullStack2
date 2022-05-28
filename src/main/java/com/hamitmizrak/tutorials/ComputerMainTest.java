@@ -1,4 +1,4 @@
-package com.hamitmizrak.abstractx;
+package com.hamitmizrak.tutorials;
 
 public class ComputerMainTest {
     public static void main(String[] args) {

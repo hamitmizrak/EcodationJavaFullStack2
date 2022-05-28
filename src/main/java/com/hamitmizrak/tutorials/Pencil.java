@@ -1,15 +1,13 @@
-package com.hamitmizrak.farklipaket;
-
-import com.hamitmizrak.aynipaket.Student;
+package com.hamitmizrak.tutorials;
 
 public class Pencil {
 
 
     public static void main(String[] args) {
-        Student stu=new Student();
+      /*  Student stu=new Student();
 
         String exam1=stu.studentPublic;
-        System.out.println(exam1);
+        System.out.println(exam1);*/
 
        // String exam2=stu.studentProtected;
        // System.out.println(exam2);
