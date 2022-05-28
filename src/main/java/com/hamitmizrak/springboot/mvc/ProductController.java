@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.swing.*;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -25,10 +26,10 @@ public class ProductController {
     @GetMapping("/product/save")
     @ResponseBody
     public String saveProduct() {
-        for (int i = 1; i <=10 ; i++) {
-            UUID uuid=UUID.randomUUID();
+        for (int i = 1; i <= 10; i++) {
+            UUID uuid = UUID.randomUUID();
             ProductEntity entity = ProductEntity.builder()
-                    .productId(0L).productName("ürün adı: "+i+" "+uuid).productTrade("ürün marka")
+                    .productId(0L).productName("ürün adı: " + i + " " + uuid).productTrade("ürün marka")
                     .build();
             iProduct.save(entity);
         }
@@ -36,19 +37,18 @@ public class ProductController {
     }
 
 
-
     //FIND
     //http://localhost:8080/product/find/1
     @GetMapping("/product/find/{id}")
     @ResponseBody
-    public String findProductId(@PathVariable(name="id") Long id){
+    public String findProductId(@PathVariable(name = "id") Long id) {
         //null pointer exception almamak için
-      Optional<ProductEntity> entityOptional=  iProduct.findById(id);
-      if(entityOptional.isPresent()){
-          return "Bulundu. "+entityOptional.get();
-      }else{
-          return "ID: "+id+" bulunmadı";
-      }
+        Optional<ProductEntity> entityOptional = iProduct.findById(id);
+        if (entityOptional.isPresent()) {
+            return "Bulundu. " + entityOptional.get();
+        } else {
+            return "ID: " + id + " bulunmadı";
+        }
     }
 
 
@@ -56,19 +56,36 @@ public class ProductController {
     //http://localhost:8080/product/delete/1
     @GetMapping("/product/delete/{id}")
     @ResponseBody
-    public String deleteProduct(@PathVariable(name="id") Long id){
-        Optional<ProductEntity> entityOptional=  iProduct.findById(id);
-        if(entityOptional.isPresent()){
+    public String deleteProduct(@PathVariable(name = "id") Long id) {
+        Optional<ProductEntity> entityOptional = iProduct.findById(id);
+        if (entityOptional.isPresent()) {
             iProduct.deleteById(id);
-            return "silindi. "+entityOptional.get();
-        }else{
-            return "ID: "+id+" bulunmadı silemedim";
+            return "silindi. " + entityOptional.get();
+        } else {
+            return "ID: " + id + " bulunmadı silemedim";
         }
+    }
 
+    //productName  productTrade
 
-
-
-
+    //UPDATE
+    //http://localhost:8080/product/update/1
+    @GetMapping("/product/update/{id}")
+    @ResponseBody
+    public String updateProduct(@PathVariable(name = "id") Long id) {
+        Optional<ProductEntity> entityOptional = iProduct.findById(id);
+        String name, trade;
+        if (entityOptional.isPresent()) {
+            name = JOptionPane.showInputDialog("ürün adı giriniz");
+            trade = JOptionPane.showInputDialog("ürün markayı giriniz");
+            ProductEntity entity = entityOptional.get();
+            entity.setProductName(name);
+            entity.setProductTrade(trade);
+            iProduct.save(entity);
+            return "güncellendi. " + entityOptional.get();
+        } else {
+            return "ID: " + id + " bulunmadı güncelleyeyim";
+        }
     }
 
 
