@@ -1,4 +1,4 @@
-package com.hamitmizrak.mvc;
+package com.hamitmizrak.springboot.mvc;
 
 import com.hamitmizrak.database.dto.RegisterDto;
 import lombok.extern.log4j.Log4j2;

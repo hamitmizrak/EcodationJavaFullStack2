@@ -1,4 +1,4 @@
-package com.hamitmizrak.mvc;
+package com.hamitmizrak.springboot.mvc;
 
 import com.hamitmizrak.database.dto.AdminDto;
 import org.springframework.stereotype.Controller;

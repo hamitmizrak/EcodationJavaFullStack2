@@ -23,3 +23,4 @@ CREATE TABLE `employee_management_system`.`admin` (
      */
 
 }
+
