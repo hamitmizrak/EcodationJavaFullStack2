@@ -6,8 +6,11 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Controller
@@ -21,7 +24,7 @@ public class ProductController {
     //http://localhost:8080/product/save
     @GetMapping("/product/save")
     @ResponseBody
-    public String getProduct() {
+    public String saveProduct() {
         for (int i = 1; i <=10 ; i++) {
             UUID uuid=UUID.randomUUID();
             ProductEntity entity = ProductEntity.builder()
@@ -31,6 +34,7 @@ public class ProductController {
         }
         return "Product Save Başarılı";
     }
+
 
 
 }
