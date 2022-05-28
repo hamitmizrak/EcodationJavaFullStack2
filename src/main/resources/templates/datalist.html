@@ -32,31 +32,48 @@
 
     <link rel="stylesheet" th:href="@{/css/index.css}">
     <script th:src="@{/js/index.js}"></script>
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
 
 </head>
 
 <body class="container">
 
-<!-- start codes  -->
-<!-- key_list-->
-<table class="table table-hover table-striped table-info">
-    <thead>
-    <tr>
-        <th th:text="#{product_id}"></th>
-        <th th:text="#{product_name}"></th>
-        <th th:text="#{product_trade}"></th>
-        <th th:text="#{product_date}"></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="product:${key_list}">
-        <td th:text="${product.productId}"></td>
-        <td th:text="${product.productName}"></td>
-        <td th:text="${product.productTrade}"></td>
-        <td th:text="${product.createdDate}"></td>
-    </tr>
-    </tbody>
-</table>
+<div class="mt-5 bordered shadow p-1  ">
+    <a class="btn btn-success" href="http://localhost:8080/product/list2">LISTELE</a>
+    <a class="btn btn-primary" href="#">EKLEME</a>
+
+    <!-- start codes  -->
+    <!-- key_list-->
+    <table class="table table-hover table-striped table-dark">
+        <thead>
+            <tr>
+                <th th:text="#{product_id}"></th>
+                <th th:text="#{product_name}"></th>
+                <th th:text="#{product_trade}"></th>
+                <th th:text="#{product_date}"></th>
+            <th>View</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product:${key_list}">
+                <td th:text="${product.productId}"></td>
+                <td th:text="${product.productName}"></td>
+                <td th:text="${product.productTrade}"></td>
+                <td th:text="${product.createdDate}"></td>
+            <td> <a href="#"><i class="fa-solid fa-binoculars text-warning"></i></a>   </td>
+            <td> <a href="#"><i class="fa-regular fa-trash-can text-danger"></i></a> </td>
+            <td> <a href="#"><i class="fa-solid fa-wrench text-primary"></i></a>  </td>
+        </tr>
+        </tbody>
+        </table>
+
+</div>
 
 
 
