@@ -37,4 +37,27 @@ public class ProductController {
 
 
 
+    //FIND
+    //http://localhost:8080/product/find/1
+    @GetMapping("/product/find/{id}")
+    @ResponseBody
+    public String findProductId(@PathVariable(name="id") Long id){
+        //null pointer exception almamak için
+      Optional<ProductEntity> entityOptional=  iProduct.findById(id);
+      if(entityOptional.isPresent()){
+          return "Bulundu. "+entityOptional.get();
+      }else{
+          return "ID: "+id+" bulunmadı";
+      }
+    }
+
+
+
+
+
+
+
+    }
+
+
 }
