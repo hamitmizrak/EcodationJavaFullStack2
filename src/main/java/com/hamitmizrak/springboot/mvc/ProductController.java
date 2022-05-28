@@ -52,6 +52,18 @@ public class ProductController {
     }
 
 
+    //DELETE
+    //http://localhost:8080/product/delete/1
+    @GetMapping("/product/delete/{id}")
+    @ResponseBody
+    public String deleteProduct(@PathVariable(name="id") Long id){
+        Optional<ProductEntity> entityOptional=  iProduct.findById(id);
+        if(entityOptional.isPresent()){
+            iProduct.deleteById(id);
+            return "silindi. "+entityOptional.get();
+        }else{
+            return "ID: "+id+" bulunmadı silemedim";
+        }
 
 
 
