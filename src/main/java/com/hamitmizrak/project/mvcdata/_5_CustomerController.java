@@ -5,11 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -23,6 +21,9 @@ public class _5_CustomerController implements _4_ICustomer {
     @Autowired
     _3_ICustomerRepository repository;
 
+    private static void sendMail(String message){
+        log.error("Hata oluştur"+message);
+    }
 
 
     //http://localhost:8080/customer/save/fake
@@ -47,23 +48,31 @@ public class _5_CustomerController implements _4_ICustomer {
     //SAVE
     //http://localhost:8080/customer/save
     @Override
-    @GetMapping("customer/save")
+    @GetMapping("/customer/save")
     public String getCustomer(Model model) {
         model.addAttribute("validation_customer",new _1_CustomerDto());
-        return "customer_list";
+        return "customer_save";
     }
 
     //http://localhost:8080/customer/save
     @Override
-    @PostMapping("customer/save")
-    public String postCustomer(_1_CustomerDto customerDto, BindingResult bindingResult) {
-        return "customer_list";
+    @PostMapping("/customer/save")
+    public String postCustomer(@Valid  @ModelAttribute("validation_customer") @RequestBody _1_CustomerDto customerDto, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()){
+            return "customer_save";
+        }
+        _2_CustomerEntity entity=new _2_CustomerEntity();
+        entity.setCustomerName(customerDto.getCustomerName());
+        entity.setCustomerSurname(customerDto.getCustomerSurname());
+        entity.setCustomerHesCode(customerDto.getCustomerHesCode());
+        repository.save(entity);
+        return "redirect:/customer/list";
     }
 
     //LIST
     //http://localhost:8080/customer/list
     @Override
-    @GetMapping("customer/list")
+    @GetMapping("/customer/list")
     public String listCustomer(Model model) {
         List<_2_CustomerEntity> listem=  repository.findAll();
         model.addAttribute("list_customer",listem);
@@ -73,7 +82,7 @@ public class _5_CustomerController implements _4_ICustomer {
     //FIND
     //http://localhost:8080/customer/find/1
     @Override
-    @GetMapping("customer/find/{id}")
+    @GetMapping("/customer/find/{id}")
     @ResponseBody
     public String findCustomer(@PathVariable(name = "id") Long id) {
         Optional<_2_CustomerEntity> find= repository.findById(id);
@@ -85,7 +94,7 @@ public class _5_CustomerController implements _4_ICustomer {
 
     //UPDATE
     @Override
-    @GetMapping("customer/update/{id}")
+    @GetMapping("/customer/update/{id}")
     public String updateCustomer(@PathVariable(name = "id") Long id) {
         return null;
     }
@@ -95,7 +104,7 @@ public class _5_CustomerController implements _4_ICustomer {
     //DELETE
     //http://localhost:8080/customer/delete/4
     @Override
-    @GetMapping("customer/delete/{id}")
+    @GetMapping("/customer/delete/{id}")
     public String deleteCustomer(@PathVariable(name = "id") Long id, Model model) {
         Optional<_2_CustomerEntity> find= repository.findById(id);
         if(find.isPresent()){
