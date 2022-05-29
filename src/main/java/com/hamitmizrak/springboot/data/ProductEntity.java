@@ -1,12 +1,11 @@
 package com.hamitmizrak.springboot.data;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 //lombok
@@ -15,12 +14,10 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 
-
 //Entity
 @Entity
 @Table(name = "product")
 public class ProductEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id",updatable = false)
