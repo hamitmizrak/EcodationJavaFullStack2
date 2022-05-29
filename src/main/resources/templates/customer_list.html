@@ -57,7 +57,7 @@
             <td th:text="${cust.customerSurname}"></td>
             <td th:text="${cust.customerHesCode}"></td>
             <td th:text="${cust.createdDate}"></td>
-            <td><i class="fa-solid fa-binoculars text-warning"></i></td>
+            <td> <a th:href="@{/customer/find/{id}(id=${cust.customerId})}">  <i class="fa-solid fa-binoculars text-warning"></i></a> </td>
             <td><i class="fa-solid fa-wrench text-primary"></i></td>
             <td><a th:href="@{/customer/delete/{id}(id=${cust.customerId})}"> <i
                         class="fa-regular fa-trash-can text-danger"></i></a> </td>

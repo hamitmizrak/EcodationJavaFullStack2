@@ -20,7 +20,7 @@ public interface _4_ICustomer {
     public String listCustomer(Model model);
 
     //Find
-    public String findCustomer(Long id);
+    public String findCustomer(Long id,Model model);
 
     //Update
     public String updateCustomer(Long id);

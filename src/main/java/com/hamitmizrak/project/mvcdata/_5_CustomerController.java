@@ -83,13 +83,15 @@ public class _5_CustomerController implements _4_ICustomer {
     //http://localhost:8080/customer/find/1
     @Override
     @GetMapping("/customer/find/{id}")
-    @ResponseBody
-    public String findCustomer(@PathVariable(name = "id") Long id) {
+    public String findCustomer(@PathVariable(name = "id") Long id,Model model) {
         Optional<_2_CustomerEntity> find= repository.findById(id);
-        if(find.isPresent())
-            return "Bulundu"+find.get();
+        if(find.isPresent()){
+            //return "Bulundu"+find.get();
+            model.addAttribute("find_key",find.get());
+            return "customer_view";
+        }
         else
-            return id+"ID: "+id+" Bulunmadı";
+            return "redirect:/customer/list";
     }
 
     //UPDATE
