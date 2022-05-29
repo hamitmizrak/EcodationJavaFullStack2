@@ -6,11 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 //http://localhost:8080/h2-console
 
@@ -69,20 +71,40 @@ public class _5_CustomerController implements _4_ICustomer {
     }
 
     //FIND
+    //http://localhost:8080/customer/find/1
     @Override
-    public String findCustomer(Long id) {
-        return null;
+    @GetMapping("customer/find/{id}")
+    @ResponseBody
+    public String findCustomer(@PathVariable(name = "id") Long id) {
+        Optional<_2_CustomerEntity> find= repository.findById(id);
+        if(find.isPresent())
+            return "Bulundu"+find.get();
+        else
+            return id+"ID: "+id+" Bulunmadı";
     }
 
     //UPDATE
     @Override
-    public String updateCustomer(Long id) {
+    @GetMapping("customer/update/{id}")
+    public String updateCustomer(@PathVariable(name = "id") Long id) {
         return null;
     }
 
+
+
     //DELETE
+    //http://localhost:8080/customer/delete/4
     @Override
-    public String deleteCustomer(Long id) {
-        return null;
+    @GetMapping("customer/delete/{id}")
+    public String deleteCustomer(@PathVariable(name = "id") Long id, Model model) {
+        Optional<_2_CustomerEntity> find= repository.findById(id);
+        if(find.isPresent()){
+            repository.deleteById(id);
+            model.addAttribute("data","success");
+        }
+        else{
+            model.addAttribute("data","failed");
+        }
+        return "redirect:/customer/list";
     }
 }

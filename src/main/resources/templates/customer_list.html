@@ -30,6 +30,13 @@
         <a class="btn btn-primary" href="./customer/save">EKLEME</a>
     </div>
 
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <strong>
+            <p  th:text="'${data}'"></p>
+        </strong>
+    </div>
+
     <table class="table table hover table striped table-dark">
         <thead>
         <tr>
@@ -52,11 +59,13 @@
             <td th:text="${cust.createdDate}"></td>
             <td><i class="fa-solid fa-binoculars text-warning"></i></td>
             <td><i class="fa-solid fa-wrench text-primary"></i></td>
-            <td><i class="fa-regular fa-trash-can text-danger"></i></td>
+            <td><a th:href="@{/customer/delete/{id}(id=${cust.customerId})}"> <i
+                        class="fa-regular fa-trash-can text-danger"></i></a> </td>
         </tr>
         </tbody>
 
     </table>
+</div>
 
 
     <!-- ends codes -->
