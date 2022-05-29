@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 
-
+//Entity
 @Entity
 @Table(name="customer")
 public class _2_CustomerEntity {
