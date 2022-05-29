@@ -1,0 +1,66 @@
+<!doctype html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #e3d4d6;
+        }
+    </style>
+</head>
+
+<body class="container bg-dark text-danger">
+<!-- start codes -->
+<div class="mt-5 bordered shadow p-1  ">
+    <div class="mb-3 mt-3">
+        <a class="btn btn-success mr-3" href="./customer/list">LISTELE</a>
+        <a class="btn btn-primary" href="./customer/save">EKLEME</a>
+    </div>
+
+    <table class="table table hover table striped table-dark">
+        <thead>
+        <tr>
+            <th th:text="#{customerId}"></th>
+            <th th:text="#{customerName}"></th>
+            <th th:text="#{customerSurname}"></th>
+            <th th:text="#{customerHesCode}"></th>
+            <th th:text="#{customerCreatedDate}"></th>
+            <th th:text="#{view}"></th>
+            <th th:text="#{update}"></th>
+            <th th:text="#{delete}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cust:${list_customer}">
+            <td th:text="${cust.customerId}"></td>
+            <td th:text="${cust.customerName}"></td>
+            <td th:text="${cust.customerSurname}"></td>
+            <td th:text="${cust.customerHesCode}"></td>
+            <td th:text="${cust.createdDate}"></td>
+            <td><i class="fa-solid fa-binoculars text-warning"></i></td>
+            <td><i class="fa-solid fa-wrench text-primary"></i></td>
+            <td><i class="fa-regular fa-trash-can text-danger"></i></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+    <!-- ends codes -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
