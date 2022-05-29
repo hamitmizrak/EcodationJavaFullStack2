@@ -24,34 +24,45 @@
 
 <body class="container bg-dark text-danger">
 <!-- start codes -->
-<div class="mt-5 bordered shadow p-1  ">
-    <div class="mb-3 mt-3">
-        <a class="btn btn-success mr-3" href="/customer/list">LISTELE</a>
-        <a class="btn btn-primary" href="/customer/save">EKLEME</a>
-    </div>
-</div>
+
 
 <form th:action="@{/customer/save}" th:method="post" th:object="${validation_customer}"  >
     <div class="container">
         <div class="row">
-            <div class="form-group">
-                <input type="text" class="form-control" id="customerName" th:field="*{customerName}" autofocus placeholder="adınızı giriniz">
-                <div th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}" class="text-danger"></div>
-            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
 
-            <div class="form-group">
-                <input type="text" class="form-control" id="customerSurname" th:field="*{customerSurname}" autofocus placeholder="soyadınızı giriniz">
-                <div th:if="${#fields.hasErrors('customerSurname')}" th:errors="*{customerSurname}" class="text-danger"></div>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" id="customerHesCode" th:field="*{customerHesCode}" autofocus placeholder="customerHesCode giriniz">
-                <div th:if="${#fields.hasErrors('customerHesCode')}" th:errors="*{customerHesCode}" class="text-danger"></div>
-            </div>
+                <div class="mt-5 bordered shadow p-1  ">
+                    <div class="mb-3 mt-3">
+                        <a class="btn btn-success mr-3" href="/customer/list">LISTELE</a>
+                        <a class="btn btn-primary" href="/customer/save">EKLEME</a>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <button type="reset" class="btn btn-danger" >Temizle</button>
-                <button type="submit" class="btn btn-primary" >Gönder</button>
+                <h1 class="display-3 mb-3 mt-5">Kayıt</h1>
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="customerName" th:field="*{customerName}" autofocus placeholder="adınızı giriniz">
+                    <div th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}" class="text-danger"></div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="customerSurname" th:field="*{customerSurname}" autofocus placeholder="soyadınızı giriniz">
+                    <div th:if="${#fields.hasErrors('customerSurname')}" th:errors="*{customerSurname}" class="text-danger"></div>
+                </div>
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="customerHesCode" th:field="*{customerHesCode}" autofocus placeholder="customerHesCode giriniz">
+                    <div th:if="${#fields.hasErrors('customerHesCode')}" th:errors="*{customerHesCode}" class="text-danger"></div>
+                </div>
+
+                <div class="form-group">
+                    <button type="reset" class="btn btn-danger" >Temizle</button>
+                    <button type="submit" class="btn btn-primary" >Gönder</button>
+                </div>
+
             </div>
+            <div class="col-md-2"></div>
+
+
         </div>
     </div>
 </form>
