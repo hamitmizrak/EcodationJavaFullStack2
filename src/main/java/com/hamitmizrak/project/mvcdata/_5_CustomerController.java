@@ -122,6 +122,7 @@ public class _5_CustomerController implements _4_ICustomer {
 
 
     //SORTING
+    //import org.springframework.data.domain.Sort;
     //Verilerimizi küçükten büyüğe doğru veya büyükten küçüğe doğru sıralama yapar.
     //http://localhost:8080/customer/sorting
     @GetMapping("/customer/sorting")
@@ -139,19 +140,44 @@ public class _5_CustomerController implements _4_ICustomer {
 
 
     //PAGING
-    //http://localhost:8080/customer/paging/1
-    @GetMapping("/customer/paging/{page}")
-    @ResponseBody
-    public String pagingCustomerId(@PathVariable(name = "page") int page) {
+    //http://localhost:8080/customer/paging/0/10    ==> 0.dizin yani  1.sayfada 7 tane data göster
+    //import org.springframework.data.domain.Page;
+    //import org.springframework.data.domain.PageRequest;
+    //import org.springframework.data.domain.Pageable;
 
-        //PageRequest.of(page,data)
-        //page:Kaçıncı sayfa
-        //data:o sayfada kaç data gelecek
-        // her bir sayfada 5 tane data olsun
-        Pageable pageable = PageRequest.of(page, 5);
+    @GetMapping("/customer/paging/{page}/{size}")
+    @ResponseBody
+    public String pagingCustomer(
+            @PathVariable(name = "page") int page ,
+            @PathVariable(name = "size") int size  ) {
+
+        // PageRequest.of(page,data)
+        // page:Kaçıncı sayfa
+        Pageable pageable = PageRequest.of(page, size);
         Page<_2_CustomerEntity> pagingList = repository.findAll(pageable);
 
         // pagingList.forEach(System.out::println);
+        log.info(pagingList);
+        for (_2_CustomerEntity temp : pagingList) {
+            log.info(temp);
+        }
+        return pagingList + "";
+    }
+
+    //SORTING PAGING
+    //http://localhost:8080/customer/paging2/0/10
+    @GetMapping("/customer/paging2/{page}/{size}")
+    @ResponseBody
+    public String pagingSortingCustomer(
+            @PathVariable(name = "page") int page ,
+            @PathVariable(name = "size") int size  ) {
+
+        Sort sort=Sort.by("customerId").ascending();
+        Pageable pageable = PageRequest.of(page, size,sort);
+        Page<_2_CustomerEntity> pagingList = repository.findAll(pageable);
+
+        // pagingList.forEach(System.out::println);
+        log.info(pagingList);
         for (_2_CustomerEntity temp : pagingList) {
             log.info(temp);
         }
