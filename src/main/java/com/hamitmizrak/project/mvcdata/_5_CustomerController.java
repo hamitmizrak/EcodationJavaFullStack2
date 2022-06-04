@@ -2,6 +2,7 @@ package com.hamitmizrak.project.mvcdata;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,8 +22,8 @@ public class _5_CustomerController implements _4_ICustomer {
     @Autowired
     _3_ICustomerRepository repository;
 
-    private static void sendMail(String message){
-        log.error("Hata oluştur"+message);
+    private static void sendMail(String message) {
+        log.error("Hata oluştur" + message);
     }
 
 
@@ -50,18 +51,18 @@ public class _5_CustomerController implements _4_ICustomer {
     @Override
     @GetMapping("/customer/save")
     public String getCustomer(Model model) {
-        model.addAttribute("validation_customer",new _1_CustomerDto());
+        model.addAttribute("validation_customer", new _1_CustomerDto());
         return "customer_save";
     }
 
     //http://localhost:8080/customer/save
     @Override
     @PostMapping("/customer/save")
-    public String postCustomer(@Valid  @ModelAttribute("validation_customer") @RequestBody _1_CustomerDto customerDto, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()){
+    public String postCustomer(@Valid @ModelAttribute("validation_customer") @RequestBody _1_CustomerDto customerDto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "customer_save";
         }
-        _2_CustomerEntity entity=new _2_CustomerEntity();
+        _2_CustomerEntity entity = new _2_CustomerEntity();
         entity.setCustomerName(customerDto.getCustomerName());
         entity.setCustomerSurname(customerDto.getCustomerSurname());
         entity.setCustomerHesCode(customerDto.getCustomerHesCode());
@@ -74,8 +75,8 @@ public class _5_CustomerController implements _4_ICustomer {
     @Override
     @GetMapping("/customer/list")
     public String listCustomer(Model model) {
-        List<_2_CustomerEntity> listem=  repository.findAll();
-        model.addAttribute("list_customer",listem);
+        List<_2_CustomerEntity> listem = repository.findAll();
+        model.addAttribute("list_customer", listem);
         return "customer_list";
     }
 
@@ -83,14 +84,13 @@ public class _5_CustomerController implements _4_ICustomer {
     //http://localhost:8080/customer/find/1
     @Override
     @GetMapping("/customer/find/{id}")
-    public String findCustomer(@PathVariable(name = "id") Long id,Model model) {
-        Optional<_2_CustomerEntity> find= repository.findById(id);
-        if(find.isPresent()){
+    public String findCustomer(@PathVariable(name = "id") Long id, Model model) {
+        Optional<_2_CustomerEntity> find = repository.findById(id);
+        if (find.isPresent()) {
             //return "Bulundu"+find.get();
-            model.addAttribute("find_key",find.get());
+            model.addAttribute("find_key", find.get());
             return "customer_view";
-        }
-        else
+        } else
             return "redirect:/customer/list";
     }
 
@@ -102,20 +102,35 @@ public class _5_CustomerController implements _4_ICustomer {
     }
 
 
-
     //DELETE
     //http://localhost:8080/customer/delete/4
     @Override
     @GetMapping("/customer/delete/{id}")
     public String deleteCustomer(@PathVariable(name = "id") Long id, Model model) {
-        Optional<_2_CustomerEntity> find= repository.findById(id);
-        if(find.isPresent()){
+        Optional<_2_CustomerEntity> find = repository.findById(id);
+        if (find.isPresent()) {
             repository.deleteById(id);
-            model.addAttribute("data","success");
-        }
-        else{
-            model.addAttribute("data","failed");
+            model.addAttribute("data", "success");
+        } else {
+            model.addAttribute("data", "failed");
         }
         return "redirect:/customer/list";
     }
+
+
+    //SORTING
+    //Verilerimizi küçükten büyüğe doğru veya büyükten küçüğe doğru sıralama yapar.
+    //http://localhost:8080/customer/sorting
+    @GetMapping("/customer/sorting")
+    @ResponseBody
+    public String sortingCustomerId() {
+
+        //Sort sort = Sort.by("customerId").ascending();   // küçükten büyüğe doğru
+        //Sort sort = Sort.by("customerId").descending();  // büyükten küçüğe doğru
+        Sort sort = Sort.by("customerName").descending();  // büyükten küçüğe doğru
+        List<_2_CustomerEntity> sortingList = repository.findAll(sort);
+        sortingList.forEach(System.out::println);
+        return sortingList+"\n";
+    }
+
 }

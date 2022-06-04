@@ -48,9 +48,9 @@
     <div class="card-header">
       Müşteri
     </div>
-    <div class="card-body">
+    <div class="card-body" th:each="cust:${find_key}">
       <h5 class="card-title">Müşteri Bilgiler</h5>
-      <p class="card-text">Müşteri ID</p>
+      <p class="card-text" >Müşteri ID</p>
       <p class="card-text">Müşteri ADI</p>
       <p class="card-text">Müşteri SOYADI</p>
       <p class="card-text">Müşteri HesCodes</p>
