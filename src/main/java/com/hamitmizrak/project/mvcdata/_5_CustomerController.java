@@ -2,6 +2,9 @@ package com.hamitmizrak.project.mvcdata;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -124,13 +127,36 @@ public class _5_CustomerController implements _4_ICustomer {
     @GetMapping("/customer/sorting")
     @ResponseBody
     public String sortingCustomerId() {
-
         //Sort sort = Sort.by("customerId").ascending();   // küçükten büyüğe doğru
         //Sort sort = Sort.by("customerId").descending();  // büyükten küçüğe doğru
         Sort sort = Sort.by("customerName").descending();  // büyükten küçüğe doğru
-        List<_2_CustomerEntity> sortingList = repository.findAll(sort);
+
+        //List<_2_CustomerEntity> sortingList = repository.findAll(sort);
+        Iterable<_2_CustomerEntity> sortingList = repository.findAll(sort);
         sortingList.forEach(System.out::println);
-        return sortingList+"\n";
+        return sortingList + "\n";
     }
+
+
+    //PAGING
+    //http://localhost:8080/customer/paging/1
+    @GetMapping("/customer/paging/{page}")
+    @ResponseBody
+    public String pagingCustomerId(@PathVariable(name = "page") int page) {
+
+        //PageRequest.of(page,data)
+        //page:Kaçıncı sayfa
+        //data:o sayfada kaç data gelecek
+        // her bir sayfada 5 tane data olsun
+        Pageable pageable = PageRequest.of(page, 5);
+        Page<_2_CustomerEntity> pagingList = repository.findAll(pageable);
+
+        // pagingList.forEach(System.out::println);
+        for (_2_CustomerEntity temp : pagingList) {
+            log.info(temp);
+        }
+        return pagingList + "";
+    }
+
 
 }
