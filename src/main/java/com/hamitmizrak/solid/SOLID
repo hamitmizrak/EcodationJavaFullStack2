@@ -1,0 +1,4 @@
+SOLID
+
+SingleResponsibility : tek sorumluluk
+Open/Closed: var olan özellik korunsun(Closed) yeni özellik eklensin(Open)
