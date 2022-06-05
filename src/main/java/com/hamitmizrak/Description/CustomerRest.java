@@ -1,9 +1,8 @@
-package com.hamitmizrak.rest;
+package com.hamitmizrak.Description;
 
 
 import com.hamitmizrak.project.mvcdata._1_CustomerDto;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -140,12 +139,31 @@ public class CustomerRest {
     @GetMapping(value = "status1")
     public ResponseEntity<_1_CustomerDto>  getStatus() {
         _1_CustomerDto customerDto = _1_CustomerDto.builder().customerId(1L).customerName("Müşteri Adı").customerSurname("Müşteri Soyadı").build();
-
         //return new ResponseEntity<>(customerDto, HttpStatus.OK);
         //return  ResponseEntity.status(200).body(customerDto);
         //return  ResponseEntity.status(HttpStatus.OK).body(customerDto);
         //return  ResponseEntity.ok().body(customerDto);
         return  ResponseEntity.ok(customerDto);
+    }
+
+    // 404 400 200
+    //http://localhost:8080/multiple
+    //http://localhost:8080/multiple/0
+    //http://localhost:8080/multiple/4
+    @GetMapping( {"multiple","multiple/{id}"})
+    public ResponseEntity<?> getMultipleResponse( @PathVariable(name="id", required = false) Long id){
+        _1_CustomerDto customerDto = _1_CustomerDto.builder().customerId(id).customerName("Müşteri Adı").customerSurname("Müşteri Soyadı").build();
+
+        // 3 şart 200=ok 400=badrequest 404=notfound
+        if(customerDto.getCustomerId()==null){//id==> null ise
+            log.error("Ürün yoktur");
+            return ResponseEntity.notFound().build(); //404
+        } else if(customerDto.getCustomerId()==0){//id ==> 0
+            log.error("id=0 geldi ");
+            return ResponseEntity.badRequest().build();//400
+        }
+        log.info(customerDto);
+        return ResponseEntity.ok(customerDto);
     }
 
 }
