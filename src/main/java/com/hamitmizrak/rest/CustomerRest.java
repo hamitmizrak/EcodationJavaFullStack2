@@ -140,7 +140,12 @@ public class CustomerRest {
     @GetMapping(value = "status1")
     public ResponseEntity<_1_CustomerDto>  getStatus() {
         _1_CustomerDto customerDto = _1_CustomerDto.builder().customerId(1L).customerName("Müşteri Adı").customerSurname("Müşteri Soyadı").build();
-        return new ResponseEntity<>(customerDto, HttpStatus.OK);
+
+        //return new ResponseEntity<>(customerDto, HttpStatus.OK);
+        //return  ResponseEntity.status(200).body(customerDto);
+        //return  ResponseEntity.status(HttpStatus.OK).body(customerDto);
+        //return  ResponseEntity.ok().body(customerDto);
+        return  ResponseEntity.ok(customerDto);
     }
 
 }
