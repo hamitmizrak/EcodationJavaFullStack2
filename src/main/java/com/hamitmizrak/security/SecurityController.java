@@ -1,5 +1,6 @@
 package com.hamitmizrak.security;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
+@Log4j2
 public class SecurityController {
 
     //PUBLIC
@@ -56,6 +58,10 @@ public class SecurityController {
         Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
         if(authentication!=null){
             new SecurityContextLogoutHandler().logout(request,response,authentication);
+            log.error("server name:"+request.getServerName());
+            log.error("port name:"+request.getServerPort());
+            log.error("Header name:"+request.getContextPath());
+            log.error("status name:"+response.getStatus());
             model.addAttribute("key_logout","Çıkış başarılı");
         }else{
             model.addAttribute("key_logout","Çıkış başarısızzzzzz");
