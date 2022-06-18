@@ -25,15 +25,17 @@
 <body class="container bg-dark text-danger">
 <!-- start codes -->
 
-<div style="margin-top:20%" style="box-shadow: 1px 1px 3px 1px rgba(255,255,255,.8);">
+<div style="margin-top:20%; box-shadow: 1px 1px 3px 1px rgba(255,255,255,.8);">
     <p class="display-1 text-uppercase">Login Page</p>
-    <form action="">
+    <form action="/register" th:name="register" method="post">
         <div class="container">
             <div class="row">
-                <input type="text" class="form-control mb-3" autofocus required placeholder="kullanıcı adı giriniz">
-                <input type="password" class="form-control mb-3" required placeholder="Şifreyi giriniz">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" >
 
-                <div class="col-md-3 "></div>
+                <input type="text" th:name="username" class="form-control mb-3" autofocus required placeholder="kullanıcı adı giriniz">
+                <input type="password" th:name="password" class="form-control mb-3" required placeholder="Şifreyi giriniz">
+
+                <div class="col-md-3"></div>
                 <div class="col-md">
                     <input type="reset" value="Temizle" class="btn btn-danger" />
                     <input type="submit" value="Gönder" class="btn btn-primary" />
@@ -42,7 +44,6 @@
         </div>
     </form>
 </div>
-
 
 
 <!-- ends codes -->
