@@ -26,7 +26,13 @@ public class SecurityController {
     //http://localhost:8080/private
     @GetMapping("/private")
     public String getPrivate(Model model) {
-        model.addAttribute("key", "private");
+        Authentication authentication=SecurityContextHolder.getContext().getAuthentication();
+        String user="";
+        if(authentication!=null){
+            user=authentication.getName();
+        }
+
+        model.addAttribute("system_user", user);
         return "private";
     }
 
@@ -56,12 +62,5 @@ public class SecurityController {
         }
         return "logout";
     }
-
-
-
-
-
-
-
 
 }

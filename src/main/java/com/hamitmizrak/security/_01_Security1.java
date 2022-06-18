@@ -16,7 +16,7 @@ public class _01_Security1 extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
        http
                .authorizeRequests()
-               .antMatchers("/","/index","/register").permitAll()
+               .antMatchers("/","/index","/register","/public").permitAll()
                .antMatchers("/logout").permitAll()
                .anyRequest()
                .authenticated()
@@ -34,7 +34,7 @@ public class _01_Security1 extends WebSecurityConfigurerAdapter {
         PasswordEncoder passwordEncoder= PasswordEncoderFactories.createDelegatingPasswordEncoder();
         authentication
                 .inMemoryAuthentication()
-                .withUser("root")
+                .withUser("Hamit")
                 .password( passwordBean.passwordEncoder()
                         .encode("root")).roles("USER");
 
