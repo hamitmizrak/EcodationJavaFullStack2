@@ -40,10 +40,4 @@ public class _1_TeacherEntity {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
-
-
-
-//    private Long teacherId;
-//    private String teacherName;
-//    private String teacherSurname;
 }
