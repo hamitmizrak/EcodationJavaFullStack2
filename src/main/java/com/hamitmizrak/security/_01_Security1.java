@@ -16,13 +16,14 @@ public class _01_Security1 extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
        http
                .authorizeRequests()
-               .antMatchers("/","/index","/register")
-               .permitAll()
+               .antMatchers("/","/index","/register").permitAll()
+               .antMatchers("/logout").permitAll()
                .anyRequest()
                .authenticated()
                .and()
-               .formLogin()
-               .loginPage("/register");
+               .formLogin().loginPage("/register")
+               .and()
+               .logout().logoutSuccessUrl("/logout").invalidateHttpSession(true) ;
     }
 
     @Autowired
