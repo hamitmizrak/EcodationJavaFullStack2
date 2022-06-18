@@ -31,23 +31,6 @@ public class _5_CustomerController implements _4_ICustomer {
 
 
 
-    //PUBLIC
-    //http://localhost:8080/public
-    @GetMapping("/public")
-    public String getPublic(Model model) {
-        model.addAttribute("key", "public");
-        return "public";
-    }
-
-    //PRIVATE
-    //http://localhost:8080/private
-    @GetMapping("/private")
-    public String getPrivate(Model model) {
-        model.addAttribute("key", "private");
-        return "private";
-    }
-
-
     //http://localhost:8080/customer/save/fake
     @Override
     @GetMapping("customer/save/fake")

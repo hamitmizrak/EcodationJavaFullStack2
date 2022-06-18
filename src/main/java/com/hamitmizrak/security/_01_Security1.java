@@ -12,11 +12,35 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class _01_Security1 extends WebSecurityConfigurerAdapter {
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+       http
+               .authorizeRequests()
+               .antMatchers("/","/index","/register")
+               .permitAll()
+               .anyRequest()
+               .authenticated()
+               .and()
+               .formLogin()
+               .loginPage("/register");
+    }
+
     @Autowired
     PasswordBean passwordBean;
 
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder authentication) throws Exception{
+        PasswordEncoder passwordEncoder= PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        authentication
+                .inMemoryAuthentication()
+                .withUser("root")
+                .password( passwordBean.passwordEncoder()
+                        .encode("root")).roles("USER");
 
-    @Override
+    }
+
+
+/*    @Override
     protected void configure(HttpSecurity http) throws Exception {
        http
                .authorizeRequests()
@@ -35,7 +59,7 @@ public class _01_Security1 extends WebSecurityConfigurerAdapter {
                 .password( passwordBean.passwordEncoder()
                   .encode("root")).roles("USER");
 
-    }
+    }*/
 
 
 
